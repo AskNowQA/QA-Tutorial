@@ -19,43 +19,179 @@
     <title>QA Tutorial | Smart Data Analytics</title>
     <link rel="stylesheet" type="text/css" href="./static/semanticui/semantic.min.css">
     <style type="text/css">
-      body {
-        font-family: 'Fira Sans'
+      /* Fonts */
+
+      @font-face {
+        font-family: 'ibmplexmono-i';
+        src: url('static/fonts/ibm-plex/IBMPlexMono-Italic.otf');
+      }
+
+      @font-face {
+        font-family: 'ibmplexmono';
+        src: url('static/fonts/ibm-plex/IBMPlexMono-Regular.otf');
+      }
+
+      @font-face {
+        font-family: 'ibmplexmonolight';
+        src: url('static/fonts/ibm-plex/IBMPlexMono-Light.otf');
+      }
+
+      @font-face {
+        font-family: 'ibmplexmonobold';
+        src: url('static/fonts/ibm-plex/IBMPlexMono-Bold.otf');
+      }
+
+      @font-face {
+        font-family: 'ibmplexmonolight-i';
+        src: url('static/fonts/ibm-plex/IBMPlexMono-LightItalic.otf');
+      }
+
+      @font-face {
+        font-family: 'hack';
+        src: url('static/fonts/hack/Hack-Regular.ttf');
       }
 
       body {
+        font-family: 'Fira Sans';
+        color: #424242;
       }
 
-      #main {
-        background-color: red;
+      /* FONT MAGIC */
+      @media screen
+        and (max-device-width: 320px) {
+          #body #intro #main-text {
+            font-size: 2.5rem;
+            line-height: 2.5rem;
+          }
+
+          #body #intro #main-subtext {
+            font-size: 1rem;
+            line-height: 1rem;
+          }
       }
+
+      @media screen 
+        and (min-device-width: 320px)
+        and (max-device-width: 801px) {
+          #body #intro #main-text {
+            font-size: 3rem;
+            line-height: 3.5rem;
+          }
+
+          #body #intro #main-subtext {
+            font-size: 1.3rem;
+            line-height: 2rem;
+          }
+          
+          #body #abstract #abstract-text {
+            font-size: 1.2em;
+            line-height: 1.3em;
+            text-align: justify;
+          }
+      }
+
+      @media screen 
+        and (min-device-width: 800px) {
+          #body #intro #main-text {
+            font-size: 4rem;
+            line-height: 5rem;
+          }
+
+          #body #intro #main-subtext {
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+          }
+          
+          #body #abstract #abstract-text {
+            font-size: 1.5em;
+            line-height: 2em;
+          }          
+      }
+      
+      #header #header-menu #left-menu {
+        transition: background-color 0.5s ease;
+        font-family: "ibmplexmono";
+      }
+      
+      #header #header-menu #left-menu:hover {
+        background-color: #EEEEEE;
+        border-radius: 4px;
+        transition: background-color 0.5s ease
+      }
+
+      #body #intro {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      #body #intro #main-text {
+        text-rendering: optimizeLegibility;
+        font-family: "ibmplexmono";
+        font-weight: 500;
+        letter-spacing: -0.06rem;
+      }
+
+      #body #intro #main-subtext {
+        text-rendering: optimizeLegibility;
+        font-family: "ibmplexmonolight";
+        padding-top: 0.5em;
+      }
+      
+      #body .divider.header {
+        color: #424242;
+      }
+
+      #body #abstract #abstract-text {
+        font-family: "ibmplexmono";
+        text-align: justify;
+      }
+
     </style>
   </head>
 
   <body>
 
-    <div class="ui top large stackable menu">
-      
-      <div class="item">
-        <img class="ui mini avatar image" src="static/imgs/asknowlogo.png">
-        <span class="underline" id="title">AskNow </span>
+    <div id="header" class="ui top text large menu">
+      <div id="header-menu" class="ui container">
+
+        <div id="left-menu">
+          <a class="item" href="http://sda.tech/">
+            <i class="angle left icon" id="titleicon"></i>
+            <img class="ui avatar mini image" src="static/imgs/asknowlogo.png">
+            <span class="underline" id="title">AskNow </span>
+          </a>
+        </div>
 
       </div>
+    </div>
 
-      <a class="item">Features</a>
-      <a class="item">Testimonials</a>
-      <a class="item">Sign-in</a>
-    </div>
-<!--
-    <div class="ui bottom fixed menu">
-      <div class="item">
-        <img src="/images/logo.png">
+    <div id="body" class="ui stackable container">
+
+      <!--Title -->
+      <div class="ui padded basic center aligned segment" id="intro">
+        <h1 id="main-text">
+          Build a Question Answering System Overnight
+        </h1>
+        <h4 id="main-subtext">
+          @ ESWC 2018
+        </h4>
       </div>
-      <a class="item">Features</a>
-      <a class="item">Testimonials</a>
-      <a class="item">Sign-in</a>
+
+      <h4 class="ui horizontal divider header">
+        <i class="angle down icon"></i>
+      </h4>
+
+      <div class="ui padded basic segment" id="abstract">
+        <span id="abstract-text">
+
+          With this tutorial, we aim to provide the participants with an overview of the field, insights into commonly faced problems, its recent trends and developments. At the end of the tutorial, the audience would have hands-on experience of developing two working QA systems: one based on rule-based semantic parsing, and another, a deep learning based method. In doing so, we hope to provide a suitable entry point for the people new to this field, and ease their process of making informed decisions while creating their QA solutions.
+        </span>
+      </div>
+
     </div>
--->
+
 
   </body>
 
