@@ -68,6 +68,20 @@
             font-size: 1rem;
             line-height: 1rem;
           }
+
+          #body #abstract #abstract-text {
+            font-size: 1.5em;
+            line-height: 2em;
+            text-align: justify;
+          }
+
+          #body .section-header {
+            font-size: 1.3rem;
+          }
+          
+          #header {
+            display: none;
+          }
       }
 
       @media screen 
@@ -82,11 +96,20 @@
             font-size: 1.3rem;
             line-height: 2rem;
           }
-          
+
           #body #abstract #abstract-text {
-            font-size: 1.2em;
-            line-height: 1.3em;
+            font-size: 1em;
+            line-height: 1.1em;
             text-align: justify;
+          }
+
+          #body .section-header {
+            font-size: 1.5rem;
+            /*            line-height: 3.5rem;*/
+          }
+
+          #header {
+            display: none;
           }
       }
 
@@ -101,26 +124,51 @@
             font-size: 1.8rem;
             line-height: 2.5rem;
           }
-          
+
           #body #abstract #abstract-text {
             font-size: 1.5em;
             line-height: 2em;
-          }          
+          }
+
+          #body .section-header {
+            font-size: 2.5rem;
+            line-height: 3.5rem;
+
+          }
       }
-      
-      #header #header-menu #left-menu {
+      #header #hidden {
+        color: white;
+        font-family: "Fira Mono";
+      }
+
+      #header .right.menu .item:hover #hidden{
+        color: #424242
+      }
+
+      #header #header-menu .left.menu {
         transition: background-color 0.5s ease;
         font-family: "ibmplexmono";
       }
-      
-      #header #header-menu #left-menu:hover {
+
+      #header #header-menu .left.menu :hover{
+        transition: background-color 0.5s ease;
         background-color: #EEEEEE;
         border-radius: 4px;
-        transition: background-color 0.5s ease
+      } 
+
+      #header #header-menu .right.menu {
+        transition: background-color 0.5s ease;
+        font-family: "ibmplexmono";
+      }
+
+      #header #header-menu .right.menu :hover{
+        transition: background-color 0.5s ease;
+        background-color: #EEEEEE;
+        border-radius: 4px;
       }
 
       #body #intro {
-        height: 50vh;
+        height: 80vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -138,7 +186,7 @@
         font-family: "ibmplexmonolight";
         padding-top: 0.5em;
       }
-      
+
       #body .divider.header {
         color: #424242;
       }
@@ -148,19 +196,59 @@
         text-align: justify;
       }
 
+      #body .section-header {
+        font-family: "ibmplexmonobold", monospace;
+        text-align: right;
+      }
+
     </style>
   </head>
 
   <body>
 
+    <!--
+<div id="header" class="ui top text large menu">
+<div id="header-menu" class="ui container">
+
+<div class="left menu">
+<a class="item" href="http://sda.tech/research-topic/semantic-question-answering/">
+<i class="angle left icon" id="titleicon"></i>
+<img class="ui avatar mini image" src="static/imgs/asknowlogo.png">
+<span class="underline" id="title">AskNow </span>
+</a>
+</div>
+
+<div class="right menu">
+<a class="item" href="#abstract">
+Abstract
+</a>
+<a class="item" href="#sessions">
+Sessions
+</a>
+</div>
+
+</div>
+</div>
+-->
+
     <div id="header" class="ui top text large menu">
       <div id="header-menu" class="ui container">
 
-        <div id="left-menu">
-          <a class="item" href="http://sda.tech/">
+        <div class="left menu">
+          <a class="item" href="http://sda.tech/research-topic/semantic-question-answering/">
             <i class="angle left icon" id="titleicon"></i>
-            <img class="ui avatar mini image" src="static/imgs/asknowlogo.png">
             <span class="underline" id="title">AskNow </span>
+          </a>
+        </div>
+
+        <div class="right menu">
+          <a class="item" href="#abstract">
+            <span id="hidden">
+              # </span>Abstract
+          </a>
+          <a class="item" href="#sessions">
+            <span id="hidden">
+              # </span>Sessions
           </a>
         </div>
 
@@ -188,6 +276,56 @@
 
           With this tutorial, we aim to provide the participants with an overview of the field, insights into commonly faced problems, its recent trends and developments. At the end of the tutorial, the audience would have hands-on experience of developing two working QA systems: one based on rule-based semantic parsing, and another, a deep learning based method. In doing so, we hope to provide a suitable entry point for the people new to this field, and ease their process of making informed decisions while creating their QA solutions.
         </span>
+      </div>
+
+      <div class="ui divider">
+
+      </div>
+
+      <div class="ui padded basic segment" id="sessions">
+        <div class="section-header">
+          Session Details
+        </div>
+
+        <div class="content">
+          <div class="ui items">
+            <div class="item">
+              <div class="image">
+                <img src="/images/wireframe/image.png">
+              </div>
+              <div class="content">
+                <a class="header">Header</a>
+                <div class="meta">
+                  <span>Description</span>
+                </div>
+                <div class="description">
+                  <p></p>
+                </div>
+                <div class="extra">
+                  Additional Details
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="image">
+                <img src="/images/wireframe/image.png">
+              </div>
+              <div class="content">
+                <a class="header">Header</a>
+                <div class="meta">
+                  <span>Description</span>
+                </div>
+                <div class="description">
+                  <p></p>
+                </div>
+                <div class="extra">
+                  Additional Details
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </div>
