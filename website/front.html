@@ -227,8 +227,8 @@
         font-size: 1.5em;
       }
 
-      #body #sessions #content .item .content .header a {
-        color: #424242;
+      #body .popup {
+        color: inherit;
         border-bottom: 1px dashed #424242;
       }
 
@@ -246,31 +246,6 @@
   </head>
 
   <body>
-
-    <!--
-<div id="header" class="ui top text large menu">
-<div id="header-menu" class="ui container">
-
-<div class="left menu">
-<a class="item" href="http://sda.tech/research-topic/semantic-question-answering/">
-<i class="angle left icon" id="titleicon"></i>
-<img class="ui avatar mini image" src="static/imgs/asknowlogo.png">
-<span class="underline" id="title">AskNow </span>
-</a>
-</div>
-
-<div class="right menu">
-<a class="item" href="#abstract">
-Abstract
-</a>
-<a class="item" href="#sessions">
-Sessions
-</a>
-</div>
-
-</div>
-</div>
--->
 
     <div id="header" class="ui top text large menu">
       <div id="header-menu" class="ui container">
@@ -334,19 +309,13 @@ Sessions
 
         <div id="content">
           <div class="ui items">
+            
             <div class="item">
               <div class="image">
                 <img src="static/imgs/5431a80b-9ab9-486c-906a-e3d4b5ccaa96-hello-world.png">
               </div>
               <div class="content">
                 <span class="header">Introduction to <span class="sameline">Question Answering</span></span>
-                <!--
-<div class="meta">
-<span>
-Details
-</span>
-</div>
--->
                 <div class="description">
                   <p>
                     The primary object of this session would be to give an overview of QA over knowledge graphs. 
@@ -363,10 +332,12 @@ Details
                 <img src="static/imgs/graph.png"su>
               </div>
               <div class="content">
-                <span class="header"> <span class="handsontext">Hands-On:</span> Semantic Parsing based QA using <a class="popup" href="http://www.google.com/" data-tooltip="Visit QANARY site">QANARY</a></span>
+                <span class="header"> <span class="handsontext">Hands-On:</span> Semantic Parsing based QA using <a class="popup" href="https://github.com/WDAqua/Qanary" data-tooltip="Visit QANARY's repo">QANARY</a></span>
                 <div class="meta">
                   <span>
-                    Requirements: TBD
+                    Requirements: 
+                    <a class="popup" data-tooltip="version: TBD">java</a>; 
+                    <a class="popup" href="https://www.stardog.com/" data-tooltip="setup stardog from here">stardog</a>
                   </span>
                 </div>
                 <div class="description">
@@ -411,15 +382,22 @@ Details
               <div class="content">
                 <span class="header"> 
 
-                  Recent works <span class="connecter">and</span> Introduction to Deep Learning for QA
+                  <span class="handsontext">Hands-On:</span> Deep Learning based Simple QA
 
                 </span>
-
+                <div class="meta">
+                  <span>
+                    Requirements: 
+                    [OPTIONAL] linux distro;
+                    <a class="popup" data-tooltip="v2.7">python</a>;
+                    <a class="popup" data-tooltip="guide to setup numpy" href="https://scipy.org/install.html" >numpy</a>;
+                    <a class="popup" data-tooltip="get pytorch here" href="https://scipy.org/install.html" >pytorch</a>
+                    
+                  </span>
+                </div>
                 <div class="description">
                   <p>
-                    In this session, we will have a more specific discussion of different approaches for QA, based on a selection of recent works in the field. This will also include some less traditional approaches like rule learning, and question paraphrasing, using textual evidence.
-
-                    Towards the end, we will introduce the basics of Deep Learning, and the prerequisites for the next hands-on session.
+                    We will give a practical introduction for the development and training of a simple question answering system using neural networks, focusing on the implementation of a learning-to-rank approach for QA in <a class="popup" href="http://pytorch.org/" data-tooltip="Visit Pytorch Site">PyTorch</a>. First, we will show how to write a basic neural model for ranking questions, how to prepare training data and how to train and evaluate the model. Then we will discuss possible improvements to the model, such as handling out-of-vocabulary words and better predicate representation.
                   </p>
                 </div>
                 <div class="extra">
