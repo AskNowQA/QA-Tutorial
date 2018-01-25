@@ -16,7 +16,7 @@
 
     <!-- Site Properties -->
     <title>QA Tutorial | Smart Data Analytics</title>
-    <link rel="stylesheet" type="text/css"  href="./static/semanticui/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="./static/semanticui/semantic.min.css">
     <style type="text/css">
       /* Fonts */
 
@@ -46,8 +46,18 @@
       }
 
       @font-face {
-        font-family: 'hack';
-        src: url('static/fonts/hack/Hack-Regular.ttf');
+        font-family: 'ibmplexmonoxlight-i';
+        src: url('static/fonts/ibm-plex/IBMPlexMono-ExtraLightItalic.otf');
+      }
+
+      @font-face {
+        font-family: 'ibmplexmonoxlight';
+        src: url('static/fonts/ibm-plex/IBMPlexMono-ExtraLight.otf');
+      }
+
+      @font-face {
+        font-family: 'ibmplexmonoxxlight';
+        src: url('static/fonts/ibm-plex/IBMPlexMono-Thin.otf');
       }
 
       /* System Wide */
@@ -59,6 +69,17 @@
 
       span.sameline {
         white-space: nowrap;
+      }
+
+      /* Fixing SEMANTICUI Vertical Divider Bug */
+      /*
+      .ui.grid>.column+.divider, .ui.grid>.row>.column+.divider {
+      left: 50%;
+      }
+      */
+      .divider-column {
+        position: relative;
+        padding: 0 !important;
       }
 
       /* FONT MAGIC */
@@ -86,6 +107,8 @@
         #header {
           display: none;
         }
+
+
       }
 
       @media screen and (min-device-width: 320px) and (max-device-width: 801px) {
@@ -113,6 +136,21 @@
         #header {
           display: none;
         }
+
+        #body #interlude #readinglist {
+          border-bottom: 1px dashed #BDBDBD;
+        }
+
+
+        #body #interlude .interlude-header-main {
+          font-size: 2rem;
+          line-height: 2rem;
+        }
+
+        #body #interlude .interlude-header .interlude-header-sub {
+          font-size: 1.3rem;
+          line-height: 2rem;
+        }
       }
 
       @media screen and (min-device-width: 800px) {
@@ -135,6 +173,20 @@
           font-size: 2.5rem;
           line-height: 3.5rem;
           text-align: right;
+        }
+
+        #body #interlude #readinglist {
+          border-right: 1px dashed #BDBDBD;
+        }
+
+        #body #interlude .interlude-header-main {
+          font-size: 2rem;
+          line-height: 2rem;
+        }
+
+        #body #interlude .interlude-header .interlude-header-sub {
+          font-size: 1.3rem;
+          line-height: 2rem;
         }
       }
 
@@ -178,14 +230,14 @@
 
       #body #intro #main-text {
         text-rendering: optimizeLegibility;
-        font-family: "ibmplexmono";
+        font-family: "ibmplexmonolight";
         font-weight: 500;
         letter-spacing: -0.06rem;
       }
 
       #body #intro #main-subtext {
         text-rendering: optimizeLegibility;
-        font-family: "ibmplexmonolight";
+        font-family: "ibmplexmonoxxlight";
         padding-top: 0.5em;
       }
 
@@ -205,7 +257,8 @@
         -moz-hyphens: auto;
         -ms-hyphens: auto;
         hyphens: auto;
-        padding-bottom: 1em;
+        padding-bottom: 2em;
+        padding-top: 2em;
       }
 
       #body .section-header {
@@ -214,9 +267,17 @@
         padding-bottom: 1em;
       }
 
-      #body #sessions #content .item.notlast {
-        padding-bottom: 2.5em;
-        /*        background-color: #e0e0e0;*/
+      #body #sessions #content .item.first {
+        padding-top: 2em;
+      }
+
+      #body #sessions #content .item {
+        padding-bottom: 4em;
+      }
+
+      #body #sessions #content .item.last {
+        padding-bottom: 1em;
+/*        background-color: red;*/
       }
 
       #body #sessions #content .item .content .header {
@@ -242,13 +303,37 @@
         font-family: "ibmplexmono";
       }
 
-      /*
-      #body #interlude #interlude-left {
-      border-left: 0 !important;
-      border-bottom-color: blue !important;
-      background-origin: inherit;
+      /* Interlude stuff */
+      #body #interlude {
+        border-radius: 1em;
+        /*        border: 1.5px dashed #9E9E9E;*/
       }
-      */
+
+      #body #interlude {
+        background-color: #EEEEEE;
+      }
+
+      #body #interlude .interlude-header {
+        font-family: "ibmplexmonoxxlight", monospace;
+      }
+
+      #body #interlude .interlude-header-dimmer {
+        font-family: "ibmplexmonolight-i", monospace;
+        color: #E0E0E0;
+      }
+
+      #body #interlude .interlude-header-sub {
+        font-family: "ibmplexmonoxlight-i", monospace;
+      }
+
+      #body #above-interlude {
+        margin-top: 4em;
+      }
+
+      #body #people #people-cards {
+        padding-top: 2em;
+      }
+
     </style>
   </head>
 
@@ -297,11 +382,7 @@
       <div class="ui padded basic segment" id="abstract">
         <div id="abstract-text" class="hyphenate">
 
-          With this tutorial, we aim to provide the participants with an overview of the field of Question Answering, insights into commonly faced problems, its recent trends and developments.
-
-          At the end of the tutorial, the audience would have hands-on experience of developing two working QA systems- one based on rule-based semantic parsing, and another, a deep learning based method. 
-
-          In doing so, we hope to provide a suitable entry point for the people new to this field, and ease their process of making informed decisions while creating their QA solutions.
+          With this tutorial, we aim to provide the participants with an overview of the field of Question Answering, insights into commonly faced problems, its recent trends and developments. At the end of the tutorial, the audience would have hands-on experience of developing two working QA systems- one based on rule-based semantic parsing, and another, a deep learning based method. In doing so, we hope to provide a suitable entry point for the people new to this field, and ease their process of making informed decisions while creating their QA solutions.
         </div>
       </div>
 
@@ -317,7 +398,7 @@
         <div id="content">
           <div class="ui items">
 
-            <div class="item notlast">
+            <div class="item first">
               <div class="image">
                 <img src="static/imgs/5431a80b-9ab9-486c-906a-e3d4b5ccaa96-hello-world.png">
               </div>
@@ -325,18 +406,15 @@
                 <span class="header">Introduction to <span class="sameline">Question Answering</span></span>
                 <div class="description">
                   <p>
-                    The primary object of this session would be to give an overview of QA over knowledge graphs. 
-                    This will include common source KGs, the datasets used to evaluate QA systems, an overview of the prominent types of approaches, and familiarizing the audience with the sub-tasks (like entity linking, predicate linking) and the terminology used in the community. 
-
-                    We will then introduce the basic concepts of NLP needed for semantic parsing based QA systems (for the next session.).
+                    The primary object of this session would be to give an overview of QA over knowledge graphs. This will include common source KGs, the datasets used to evaluate QA systems, an overview of the prominent types of approaches, and familiarizing the audience with the sub-tasks (like entity linking, predicate linking) and the terminology used in the community. We will then introduce the basic concepts of NLP needed for semantic parsing based QA systems (for the next session.).
                   </p>
                 </div>
               </div>
             </div>
 
-            <div class="item notlast">
+            <div class="item">
               <div class="image">
-                <img src="static/imgs/graph.png"su>
+                <img src="static/imgs/graph.png" su>
               </div>
               <div class="content">
                 <span class="header"> <span class="handsontext">Hands-On:</span> Semantic Parsing based QA using <a class="popup" href="https://github.com/WDAqua/Qanary" data-tooltip="Visit QANARY's repo">QANARY</a></span>
@@ -349,15 +427,13 @@
                 </div>
                 <div class="description">
                   <p>
-                    In this hands-on session, we will build our first QA system using QANARY - a methodoloy for choreographing QA pipelines distributed over the Web.
-                    We will also demonstrate how to build components for QANARY.
-                    In the process, we will introduce different concepts of Semantic Parsing relevant for QA.                 
+                    In this hands-on session, we will build our first QA system using QANARY - a methodoloy for choreographing QA pipelines distributed over the Web. We will also demonstrate how to build components for QANARY. In the process, we will introduce different concepts of Semantic Parsing relevant for QA.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div class="item notlast">
+            <div class="item">
               <div class="image">
                 <img src="static/imgs/helloworld.png">
               </div>
@@ -370,9 +446,7 @@
 
                 <div class="description">
                   <p>
-                    In this session, we will have a more specific discussion of different approaches for QA, based on a selection of recent works in the field. This will also include some less traditional approaches like rule learning, and question paraphrasing, using textual evidence.
-
-                    Towards the end, we will introduce the basics of Deep Learning, and the prerequisites for the next hands-on session.
+                    In this session, we will have a more specific discussion of different approaches for QA, based on a selection of recent works in the field. This will also include some less traditional approaches like rule learning, and question paraphrasing, using textual evidence. Towards the end, we will introduce the basics of Deep Learning, and the prerequisites for the next hands-on session.
                   </p>
                 </div>
                 <div class="extra">
@@ -382,7 +456,7 @@
               </div>
             </div>
 
-            <div class="item">
+            <div class="item last">
               <div class="image">
                 <img src="static/imgs/helloworld.png">
               </div>
@@ -419,62 +493,108 @@
         </div>
       </div>
 
-      <div class="ui divider">
-
-      </div>
 
 
-      <div class="ui padded basic segment" id="interlude">
-        poop
-        
+
+      <div class="ui padded basic two column grid stackable grid segment" id="interlude">
+
+        <div class="ui dimmer">
+          <div class="content">
+            <div class="center">
+              <span class="ui inverted header interlude-header-dimmer">
+                Coming right up, soon!
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="center aligned column" id="readinglist">
+          <div class="interlude-header">
+            <span class="interlude-header-main">
+              Reading List
+            </span> <br>
+            <span class="interlude-header-sub">
+              (Suggested)
+            </span>
+          </div>
+        </div>
 
         <!--
-<div class="ui  segment" id="interlude-left">
-<p>Top</p>
+<div class="divider-column">
+<div class="ui vertical divider">
+or
 </div>
-
-<div class="ui  segment" id="interlude-right">
-<p>Bottom</p>
 </div>
 -->
+
+        <div class="center aligned column" id="requirements">
+          <div class="interlude-header">
+            <span class="interlude-header-main">
+              Requirements
+            </span> <br>
+            <span class="interlude-header-sub">
+              at a glance
+            </span>
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="ui divider">
+
+      <div class="ui divider" id="above-interlude">
 
       </div>
+
 
       <div class="ui padded basic segment" id="people">
-        <div class="ui three stackable cards">
+
+        <div class="section-header">
+          Team
+        </div>
+
+        <div class="ui four doubling cards" id="people-cards">
           <div class="card">
             <div class="image">
-              <img src="/images/avatar/large/elliot.jpg">
+              <img src="static/imgs/lehmann.jpg">
             </div>
           </div>
           <div class="card">
             <div class="image">
-              <img src="/images/avatar/large/helen.jpg">
+              <img src="static/imgs/both.jpgg.jpg">
             </div>
           </div>
           <div class="card">
             <div class="image">
-              <img src="/images/avatar/large/jenny.jpg">
+              <img src="static/imgs/Ioanna.jpg">
             </div>
           </div>
           <div class="card">
             <div class="image">
-              <img src="/images/avatar/large/veronika.jpg">
+              <img src="static/imgs/dubey.jpg">
             </div>
           </div>
           <div class="card">
             <div class="image">
-              <img src="/images/avatar/large/stevie.jpg">
+              <img src="static/imgs/Denis.png">
             </div>
           </div>
           <div class="card">
             <div class="image">
-              <img src="/images/avatar/large/steve.jpg">
+              <img src="static/imgs/kuldeep.jpg">
             </div>
           </div>
+          <div class="card">
+            <div class="image">
+              <img src="static/imgs/maheshwari.jpg">
+            </div>
+          </div>
+          <div class="card">
+            <div class="image">
+              <img src="static/imgs/trivedi.jpg">
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -483,10 +603,16 @@
     <div id="footer">
     </div>
 
-    <!--
-<script type="text/javascript">
-</script>
--->
+
+    <script type="text/javascript">
+      $('#body #interlude')
+        .dimmer({
+        on: 'hover'
+      })
+      ;
+
+    </script>
+
 
   </body>
 
