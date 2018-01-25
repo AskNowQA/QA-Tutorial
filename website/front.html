@@ -16,7 +16,7 @@
 
     <!-- Site Properties -->
     <title>QA Tutorial | Smart Data Analytics</title>
-    <link rel="stylesheet" type="text/css" href="./static/semanticui/semantic.min.css">
+    <link rel="stylesheet" type="text/css"  href="./static/semanticui/semantic.min.css">
     <style type="text/css">
       /* Fonts */
 
@@ -239,9 +239,16 @@
       }
 
       #body #sessions #content .item .content span.handsontext {
-        font-family: "ibmplexmono"
+        font-family: "ibmplexmono";
       }
 
+      /*
+      #body #interlude #interlude-left {
+      border-left: 0 !important;
+      border-bottom-color: blue !important;
+      background-origin: inherit;
+      }
+      */
     </style>
   </head>
 
@@ -416,13 +423,20 @@
 
       </div>
 
-      <div class="ui padded horizontal segments" id="interlude">
-        <div class="ui segment">
-          <p>Top</p>
-        </div>
-        <div class="ui segment">
-          <p>Bottom</p>
-        </div>
+
+      <div class="ui padded basic segment" id="interlude">
+        poop
+        
+
+        <!--
+<div class="ui  segment" id="interlude-left">
+<p>Top</p>
+</div>
+
+<div class="ui  segment" id="interlude-right">
+<p>Bottom</p>
+</div>
+-->
       </div>
 
       <div class="ui divider">
@@ -430,7 +444,38 @@
       </div>
 
       <div class="ui padded basic segment" id="people">
-        poopeople
+        <div class="ui three stackable cards">
+          <div class="card">
+            <div class="image">
+              <img src="/images/avatar/large/elliot.jpg">
+            </div>
+          </div>
+          <div class="card">
+            <div class="image">
+              <img src="/images/avatar/large/helen.jpg">
+            </div>
+          </div>
+          <div class="card">
+            <div class="image">
+              <img src="/images/avatar/large/jenny.jpg">
+            </div>
+          </div>
+          <div class="card">
+            <div class="image">
+              <img src="/images/avatar/large/veronika.jpg">
+            </div>
+          </div>
+          <div class="card">
+            <div class="image">
+              <img src="/images/avatar/large/stevie.jpg">
+            </div>
+          </div>
+          <div class="card">
+            <div class="image">
+              <img src="/images/avatar/large/steve.jpg">
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -438,8 +483,10 @@
     <div id="footer">
     </div>
 
-    <script type="text/javascript">
-    </script>
+    <!--
+<script type="text/javascript">
+</script>
+-->
 
   </body>
 
