@@ -72,19 +72,22 @@
       }
 
       /* Fixing SEMANTICUI Vertical Divider Bug */
+
       /*
       .ui.grid>.column+.divider, .ui.grid>.row>.column+.divider {
       left: 50%;
       }
       */
+
       .divider-column {
         position: relative;
         padding: 0 !important;
       }
 
-      /* FONT MAGIC */
+      /* FONT + MEDIA QUERIES */
 
       @media screen and (max-device-width: 320px) {
+        /* Failsafe */
         #body #intro #main-text {
           font-size: 2.5rem;
           line-height: 2.5rem;
@@ -96,8 +99,8 @@
         }
 
         #body #abstract #abstract-text {
-          font-size: 1.5em;
-          line-height: 2em;
+          font-size: 1.1em;
+          line-height: 1.5em;
         }
 
         #body .section-header {
@@ -108,10 +111,29 @@
           display: none;
         }
 
+        #body #interlude #readinglist {
+          border-bottom: 1px dashed #BDBDBD;
+        }
+
+        #body #interlude .interlude-header-main {
+          font-size: 2rem;
+          line-height: 2rem;
+        }
+
+        #body #interlude .interlude-header .interlude-header-sub {
+          font-size: 1.3rem;
+          line-height: 2rem;
+        }
+
+        #body #people #people-cards .card .content a {
+          font-size: 0.7rem;
+          /*          line-height: 0.8rem;*/
+        }
 
       }
 
       @media screen and (min-device-width: 320px) and (max-device-width: 801px) {
+        /* Regular phones */
         #body #intro #main-text {
           font-size: 3rem;
           line-height: 3.5rem;
@@ -141,7 +163,6 @@
           border-bottom: 1px dashed #BDBDBD;
         }
 
-
         #body #interlude .interlude-header-main {
           font-size: 2rem;
           line-height: 2rem;
@@ -150,6 +171,11 @@
         #body #interlude .interlude-header .interlude-header-sub {
           font-size: 1.3rem;
           line-height: 2rem;
+        }
+
+        #body #people #people-cards .card .content a {
+          font-size: 0.7rem;
+          /*          line-height: 0.8rem;*/
         }
       }
 
@@ -187,6 +213,11 @@
         #body #interlude .interlude-header .interlude-header-sub {
           font-size: 1.3rem;
           line-height: 2rem;
+        }
+
+        #body #people #people-cards .card .content a {
+          font-size: 1.1em;
+          line-height: 1.1em;
         }
       }
 
@@ -248,11 +279,6 @@
       #body #abstract #abstract-text {
         font-family: "ibmplexmono";
         text-align: justify;
-        /*
-        word-wrap: break-word; // legacy name
-        word-break: break-word;
-        overflow-wrap: break-word; // new name as per the CSS3 spec
-        */
         -webkit-hyphens: auto;
         -moz-hyphens: auto;
         -ms-hyphens: auto;
@@ -277,7 +303,6 @@
 
       #body #sessions #content .item.last {
         padding-bottom: 1em;
-/*        background-color: red;*/
       }
 
       #body #sessions #content .item .content .header {
@@ -304,6 +329,7 @@
       }
 
       /* Interlude stuff */
+
       #body #interlude {
         border-radius: 1em;
         /*        border: 1.5px dashed #9E9E9E;*/
@@ -332,6 +358,23 @@
 
       #body #people #people-cards {
         padding-top: 2em;
+      }
+
+      /* People Section */
+
+      #body #people #people-cards .card {
+        border-radius: 0;
+        background-color: #EEEEEE;
+        box-shadow: none;
+        border-bottom-color: white;
+      }
+
+      #body #people #people-cards .card .image img {
+        border-radius: 0;
+      }
+
+      #body #people #people-cards .card .content a {
+        font-family: "ibmplexmonoxxlight";
       }
 
     </style>
@@ -494,8 +537,6 @@
       </div>
 
 
-
-
       <div class="ui padded basic two column grid stackable grid segment" id="interlude">
 
         <div class="ui dimmer">
@@ -553,10 +594,13 @@ or
           Team
         </div>
 
-        <div class="ui four doubling cards" id="people-cards">
+        <div class="ui four doubling  cards" id="people-cards">
           <div class="card">
             <div class="image">
               <img src="static/imgs/lehmann.jpg">
+            </div>
+            <div class="content">
+              <a class="center aligned header">Prof. Dr. Jens Lehmann</a>
             </div>
           </div>
           <div class="card">
@@ -598,6 +642,89 @@ or
         </div>
       </div>
 
+
+<!--
+      <div class="ui padded basic segment" id="people">
+
+        <div class="section-header">
+          Team2 
+        </div>
+
+        <div class="ui stackable grid">
+         
+          
+          <div class="card">
+             <div class="ui move up reveal">
+            <div class="visible content">
+            
+            <div class="image">
+                  <img src="static/imgs/both.jpgg.jpg">
+                </div>
+            </div>
+            <div class="hidden content">
+              <div>
+                Denis Lukovnikov
+              </div>
+            </div>
+            </div>
+            
+          </div>
+          
+            <div class="ui move up reveal">
+            <div class="visible content">
+              <div class="card">
+                <div class="image">
+                  <img src="static/imgs/both.jpgg.jpg">
+                </div>
+              </div>
+            </div>
+            <div class="hidden content">
+              <div>
+                Denis Lukovnikov
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="ui four doubling  cards" id="people-cards">
+
+          <div class="card">
+            <div class="image">
+              <img src="static/imgs/lehmann.jpg">
+            </div>
+            <div class="content">
+              <a class="center aligned header">Prof. Dr. Jens Lehmann</a>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <div class="image">
+              <img src="static/imgs/both.jpgg.jpg">
+            </div>
+          </div>
+
+          <div class="ui move up reveal">
+            <div class="visible content">
+              <div class="card">
+                <div class="image">
+                  <img src="static/imgs/both.jpgg.jpg">
+                </div>
+              </div>
+            </div>
+            <div class="hidden content">
+              <div>
+                Denis Lukovnikov
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+-->
+
     </div>
 
     <div id="footer">
@@ -608,9 +735,7 @@ or
       $('#body #interlude')
         .dimmer({
         on: 'hover'
-      })
-      ;
-
+      });
     </script>
 
 
