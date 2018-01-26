@@ -125,9 +125,13 @@
           line-height: 2rem;
         }
 
-        #body #people #people-cards .card .content a {
+        #body #people #people-cards .card .name.content a {
           font-size: 0.7rem;
-          /*          line-height: 0.8rem;*/
+        }
+
+        #body #people #people-cards .card .image .content a {
+          font-size: 0.9em;
+          line-height: 2em;
         }
 
       }
@@ -173,9 +177,13 @@
           line-height: 2rem;
         }
 
-        #body #people #people-cards .card .content a {
+        #body #people #people-cards .card .name.content a {
           font-size: 0.7rem;
-          /*          line-height: 0.8rem;*/
+        }
+
+        #body #people #people-cards .card .image .content a {
+          font-size: 0.9em;
+          line-height: 2em;
         }
       }
 
@@ -215,9 +223,17 @@
           line-height: 2rem;
         }
 
-        #body #people #people-cards .card .content a {
+        #body #people #people-cards .card .name.content a {
           font-size: 1.1em;
           line-height: 1.1em;
+        }
+
+        #body #people #people-cards .card .image .content a {
+          font-size: 1.2em;
+          line-height: 2em;
+        }
+        #body #people #people-cards .card .image .content a:hover{
+          font-size: 1.4em;
         }
       }
 
@@ -363,17 +379,44 @@
       /* People Section */
 
       #body #people #people-cards .card {
-        border-radius: 0;
         background-color: #EEEEEE;
         box-shadow: none;
         border-bottom-color: white;
-      }
-
-      #body #people #people-cards .card .image img {
         border-radius: 0;
       }
 
-      #body #people #people-cards .card .content a {
+      #body #people #people-cards .card .image {
+        background-color: #eeeeee;
+      }
+
+      #body #people #people-cards .card .image:hover {
+        box-shadow: none;
+      }
+
+      #body #people #people-cards .card .image img:hover {
+        box-shadow: none;
+      }
+
+      #body #people #people-cards .card .image .dimmer:hover {
+        box-shadow: none;
+      }
+
+      #body #people #people-cards .card .image img {
+        box-shadow: none;
+      }
+
+      #body #people #people-cards .card .image .content a {
+        font-family: "ibmplexmonoxxlight";
+        border-bottom: 1px dashed #EEEEEE;
+        transition: font-size 0.1s ease;
+        color: white;
+      }
+      #body #people #people-cards .card .image .content a:hover {
+        font-family: "ibmplexmono";
+        transition: font-size 0.1s ease;
+      }
+
+      #body #people #people-cards .card .name.content a {
         font-family: "ibmplexmonoxxlight";
       }
 
@@ -521,7 +564,7 @@
                 </div>
                 <div class="description">
                   <p>
-                    We will give a practical introduction for the development and training of a simple question answering system using neural networks, focusing on the implementation of a learning-to-rank approach for QA in <a class="popup" href="http://pytorch.org/" data-tooltip="Visit Pytorch Site">PyTorch</a>. First, we will show how to write a basic neural model for ranking questions, how to prepare training data and how to train and evaluate the model. Then we will discuss possible improvements to the model, such as handling out-of-vocabulary words and better predicate representation.
+                    We will give a practical introduction for the development and training of a simple question answering system using neural networks, focusing on the implementation of a learning-to-rank approach for QA in <a class="popup" href="http://pytorch.org/" data-tooltip="get pytorch here">PyTorch</a>. First, we will show how to write a basic neural model for ranking questions, how to prepare training data and how to train and evaluate the model. Then we will discuss possible improvements to the model, such as handling out-of-vocabulary words and better predicate representation.
                   </p>
                 </div>
                 <div class="extra">
@@ -552,26 +595,18 @@
         <div class="center aligned column" id="readinglist">
           <div class="interlude-header">
             <span class="interlude-header-main">
-              Reading List
+              /* reading list */
             </span> <br>
             <span class="interlude-header-sub">
-              (Suggested)
+              (suggested)
             </span>
           </div>
         </div>
 
-        <!--
-<div class="divider-column">
-<div class="ui vertical divider">
-or
-</div>
-</div>
--->
-
         <div class="center aligned column" id="requirements">
           <div class="interlude-header">
             <span class="interlude-header-main">
-              Requirements
+              /* requirements */
             </span> <br>
             <span class="interlude-header-sub">
               at a glance
@@ -595,19 +630,90 @@ or
         </div>
 
         <div class="ui four doubling  cards" id="people-cards">
+
+          <!--
+<div class="ui card">
+<div class="ui left slide masked reveal image">
+<img src="static/imgs/lehmann.jpg" class="visible content">
+<div class="hidden links content">
+
+<a href="http://sda.tech/people/prof-dr-jens-lehmann/">
+/* sda page */
+</a> 
+
+<br>
+
+<a href="https://www.linkedin.com/in/jenslehmann82/">
+/* linkedin */
+</a>
+
+<br>
+
+<a  href="https://twitter.com/JLehmann82">
+/* twitter */
+</a>
+
+</div>
+</div>
+<div class="content">
+<a class="center aligned header">Prof. Dr. Jens Lehmann</a>
+</div>
+</div>
+--> 
           <div class="card">
-            <div class="image">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <a href="http://sda.tech/people/prof-dr-jens-lehmann/">
+                      /* sda page */
+                    </a> 
+
+                    <br>
+
+                    <a href="https://www.linkedin.com/in/jenslehmann82/">
+                      /* linkedin */
+                    </a>
+
+                    <br>
+
+                    <a  href="https://twitter.com/JLehmann82">
+                      /* twitter */
+                    </a>
+                  </div>
+                </div>
+              </div>
               <img src="static/imgs/lehmann.jpg">
             </div>
-            <div class="content">
-              <a class="center aligned header">Prof. Dr. Jens Lehmann</a>
+            <div class="name content">
+              <a class="header">Prof. Dr. Jens Lehmann</a>
+              <!--
+<div class="meta">
+<span class="date">Create in Sep 2014</span>
+</div>
+-->
+            </div>
+            <!--
+<div class="extra content">
+<a>
+<i class="users icon"></i>
+2 Members
+</a>
+</div>
+-->
+          </div>
+
+          <div class="ui card">
+            <div class="ui slide  masked reveal image">
+              <img src="static/imgs/both.jpgg.jpg" class="visible content">
+              <span class="name hidden content">
+                Dr. Andreas Both
+              </span>
             </div>
           </div>
-          <div class="card">
-            <div class="image">
-              <img src="static/imgs/both.jpgg.jpg">
-            </div>
-          </div>
+
+
+
           <div class="card">
             <div class="image">
               <img src="static/imgs/Ioanna.jpg">
@@ -643,86 +749,86 @@ or
       </div>
 
 
-<!--
-      <div class="ui padded basic segment" id="people">
+      <!--
+<div class="ui padded basic segment" id="people">
 
-        <div class="section-header">
-          Team2 
-        </div>
+<div class="section-header">
+Team2 
+</div>
 
-        <div class="ui stackable grid">
-         
-          
-          <div class="card">
-             <div class="ui move up reveal">
-            <div class="visible content">
-            
-            <div class="image">
-                  <img src="static/imgs/both.jpgg.jpg">
-                </div>
-            </div>
-            <div class="hidden content">
-              <div>
-                Denis Lukovnikov
-              </div>
-            </div>
-            </div>
-            
-          </div>
-          
-            <div class="ui move up reveal">
-            <div class="visible content">
-              <div class="card">
-                <div class="image">
-                  <img src="static/imgs/both.jpgg.jpg">
-                </div>
-              </div>
-            </div>
-            <div class="hidden content">
-              <div>
-                Denis Lukovnikov
-              </div>
-            </div>
-          </div>
-          
-        </div>
-        
-        <div class="ui four doubling  cards" id="people-cards">
-
-          <div class="card">
-            <div class="image">
-              <img src="static/imgs/lehmann.jpg">
-            </div>
-            <div class="content">
-              <a class="center aligned header">Prof. Dr. Jens Lehmann</a>
-            </div>
-          </div>
+<div class="ui stackable grid">
 
 
-          <div class="card">
-            <div class="image">
-              <img src="static/imgs/both.jpgg.jpg">
-            </div>
-          </div>
+<div class="card">
+<div class="ui move up reveal">
+<div class="visible content">
 
-          <div class="ui move up reveal">
-            <div class="visible content">
-              <div class="card">
-                <div class="image">
-                  <img src="static/imgs/both.jpgg.jpg">
-                </div>
-              </div>
-            </div>
-            <div class="hidden content">
-              <div>
-                Denis Lukovnikov
-              </div>
-            </div>
-          </div>
+<div class="image">
+<img src="static/imgs/both.jpgg.jpg">
+</div>
+</div>
+<div class="hidden content">
+<div>
+Denis Lukovnikov
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="ui move up reveal">
+<div class="visible content">
+<div class="card">
+<div class="image">
+<img src="static/imgs/both.jpgg.jpg">
+</div>
+</div>
+</div>
+<div class="hidden content">
+<div>
+Denis Lukovnikov
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="ui four doubling  cards" id="people-cards">
+
+<div class="card">
+<div class="image">
+<img src="static/imgs/lehmann.jpg">
+</div>
+<div class="content">
+<a class="center aligned header">Prof. Dr. Jens Lehmann</a>
+</div>
+</div>
 
 
-        </div>
-      </div>
+<div class="card">
+<div class="image">
+<img src="static/imgs/both.jpgg.jpg">
+</div>
+</div>
+
+<div class="ui move up reveal">
+<div class="visible content">
+<div class="card">
+<div class="image">
+<img src="static/imgs/both.jpgg.jpg">
+</div>
+</div>
+</div>
+<div class="hidden content">
+<div>
+Denis Lukovnikov
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
 -->
 
     </div>
@@ -734,6 +840,10 @@ or
     <script type="text/javascript">
       $('#body #interlude')
         .dimmer({
+        on: 'hover'
+      });
+
+      $('#body #people #people-cards .card .image').dimmer({
         on: 'hover'
       });
     </script>
