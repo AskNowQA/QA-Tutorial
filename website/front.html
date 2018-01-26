@@ -71,19 +71,6 @@
         white-space: nowrap;
       }
 
-      /* Fixing SEMANTICUI Vertical Divider Bug */
-
-      /*
-      .ui.grid>.column+.divider, .ui.grid>.row>.column+.divider {
-      left: 50%;
-      }
-      */
-
-      .divider-column {
-        position: relative;
-        padding: 0 !important;
-      }
-
       /* FONT + MEDIA QUERIES */
 
       @media screen and (max-device-width: 320px) {
@@ -282,10 +269,16 @@
         letter-spacing: -0.06rem;
       }
 
-      #body #intro #main-subtext {
+      #body #intro #main-subtext a {
         text-rendering: optimizeLegibility;
         font-family: "ibmplexmonoxxlight";
+        border-bottom: 1px dashed #424242;
         padding-top: 0.5em;
+        color: #424242;
+      }
+
+      #body #intro #main-subtext a:hover {
+        font-family: "ibmplexmonolight";
       }
 
       #body .divider.header {
@@ -372,11 +365,15 @@
         margin-top: 4em;
       }
 
+      /* People Section */
+
+      #body #people {
+        margin-bottom: 4em;
+      }
+      
       #body #people #people-cards {
         padding-top: 2em;
       }
-
-      /* People Section */
 
       #body #people #people-cards .card {
         background-color: #EEEEEE;
@@ -414,8 +411,32 @@
       }
 
       #body #people #people-cards .card .name.content .header {
-        font-family: "ibmplexmonoxxlight";
+        font-family: "ibmplexmonolight";
         text-align: right;
+        color: #424242;
+      }
+
+      #footer {
+        background-color: #eeeeee !important;
+        font-family: "ibmplexmonolight";
+        font-size: 1.2em;
+        padding-top: 4em;
+        padding-bottom: 4em;
+      }
+
+      #footer #contact .horizontal.divider {
+        color: #9E9E9E;
+        font-family: "ibmplexmonoxxlight";
+      }
+
+      #footer #contact a {
+        font-family: "ibmplexmonoxlight-i";
+        color: #424242;
+        border-bottom: 1px dashed #424242;
+      }
+
+      #footer #contact a:hover {
+        font-family: "ibmplexmonolight-i";
       }
     </style>
   </head>
@@ -445,6 +466,10 @@
             <span id="hidden">
               # </span>team
           </a>
+          <a data-scroll class="item" href="#contactus">
+            <span id="hidden">
+              # </span>contactus  
+          </a>
         </div>
 
       </div>
@@ -458,7 +483,9 @@
           Build a Question Answering System Overnight
         </h1>
         <h4 id="main-subtext">
-          @ ESWC 2018
+          <a href="https://2018.eswc-conferences.org/">
+            @ ESWC 2018
+          </a>
         </h4>
       </div>
 
@@ -784,7 +811,6 @@
             </div>
           </div>
 
-
           <div class="card">
             <div class="blurring dimmable image">
               <div class="ui dimmer">
@@ -878,10 +904,49 @@
         </div>
       </div>
 
+      <!--
+<div class="ui basic padded segment" id="contactus">
+
+<div class="section-header">
+Contact Us
+</div>
+
+<div class="contactdetails">
+Drop us a line on 
+
+</div>
+
+</div>
+-->
+
     </div>
 
-    <div id="footer">
+    <div class="ui padded footer vertical segment" id="footer">
+      <div class="ui two column divided stackable grid container">
+        <div class="center aligned column" id="contact">
+          <div class="footer-header">
+
+            <span id="github">
+              Raise an issue on our 
+              <a href="https://github.com/AskNowQA/QA-Tutorial/issues">repo</a>
+            </span>
+
+            <div class="ui horizontal divider">
+              or
+            </div>
+
+            <span id="email">
+              Drop us a line on <a href="mailto:gaurav.maheshwari@uni-bonn.de?Subject=QA" target="_top">gaurav.maheshwari@uni-bonn.de</a>
+            </span>
+
+          </div>
+        </div>
+        <div class="center aligned column" id="organization">
+          Poop
+        </div>
+      </div>
     </div>
+
 
 
     <script src="static/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
