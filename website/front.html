@@ -67,7 +67,7 @@
         color: #424242;
       }
 
-      span.sameline {
+      .sameline {
         white-space: nowrap;
       }
 
@@ -120,7 +120,9 @@
           font-size: 0.9em;
           line-height: 2em;
         }
-
+        #footer {
+          font-size: 0.8em;
+        }
       }
 
       @media screen and (min-device-width: 320px) and (max-device-width: 801px) {
@@ -172,6 +174,9 @@
           font-size: 0.9em;
           line-height: 2em;
         }
+        #footer {
+          font-size: 1em;
+        }
       }
 
       @media screen and (min-device-width: 800px) {
@@ -221,6 +226,9 @@
         }
         #body #people #people-cards .card .image .content a:hover {
           font-size: 1.4em;
+        }
+        #footer {
+          font-size: 1.2em;
         }
       }
 
@@ -370,7 +378,7 @@
       #body #people {
         margin-bottom: 4em;
       }
-      
+
       #body #people #people-cards {
         padding-top: 2em;
       }
@@ -419,7 +427,6 @@
       #footer {
         background-color: #eeeeee !important;
         font-family: "ibmplexmonolight";
-        font-size: 1.2em;
         padding-top: 4em;
         padding-bottom: 4em;
       }
@@ -432,12 +439,15 @@
       #footer #contact a {
         font-family: "ibmplexmonoxlight-i";
         color: #424242;
+        
         border-bottom: 1px dashed #424242;
       }
 
       #footer #contact a:hover {
         font-family: "ibmplexmonolight-i";
       }
+      
+      #footer #
     </style>
   </head>
 
@@ -922,29 +932,66 @@ Drop us a line on
     </div>
 
     <div class="ui padded footer vertical segment" id="footer">
-      <div class="ui two column divided stackable grid container">
-        <div class="center aligned column" id="contact">
+      <div class="ui stackable grid container">
+        
+        <div class="center aligned eight wide column" id="contact">
           <div class="footer-header">
 
-            <span id="github">
+            <div id="github">
               Raise an issue on our 
               <a href="https://github.com/AskNowQA/QA-Tutorial/issues">repo</a>
-            </span>
-
-            <div class="ui horizontal divider">
-              or
             </div>
-
-            <span id="email">
-              Drop us a line on <a href="mailto:gaurav.maheshwari@uni-bonn.de?Subject=QA" target="_top">gaurav.maheshwari@uni-bonn.de</a>
-            </span>
+            <br>
+<!--            <div class="ui horizontal divider">-->
+              or
+<!--            </div>-->
+            <br>
+            <div id="email">
+              Drop us a line at <a class="sameline" href="mailto:gaurav.maheshwari@uni-bonn.de?Subject=QA" target="_top">gaurav.maheshwari@uni-bonn.de</a>
+            </div>
 
           </div>
         </div>
-        <div class="center aligned column" id="organization">
-          Poop
+        <div class="left aligned eight wide column" id="organization">
+
+          <!--
+<span>
+This tutorial is organized by members of the following organizations
+</span> 
+<br>
+-->
+
+          <div class="ui doubling padded grid">
+
+            <div class="eight wide column">
+
+              <a href="http://sda.tech" class="ui centered tiny image">
+
+              </a>
+              <img class="ui centered medium image" src="static/imgs/sdafull.png">
+            </div>
+
+            <div class="eight wide center aligned column">
+
+              <a href="http://sda.tech" class="ui centered small image">
+                <img src="static/imgs/iais.gif">
+              </a> <br>
+              <a href="http://sda.tech" class="ui centered small image">
+                <img src="static/imgs/unibonn.png">
+              </a>
+
+            </div>
+
+          </div>
+
+
+
+
+
         </div>
+                
       </div>
+      
     </div>
 
 
@@ -953,9 +1000,6 @@ Drop us a line on
 
 
     <script type="text/javascript">
-      // Enable Smooth Scrolling
-      var scroll = new SmoothScroll('#header #header-menu .menu a');
-
       $('#body #interlude')
         .dimmer({
         on: 'hover'
@@ -964,6 +1008,9 @@ Drop us a line on
       $('#body #people #people-cards .card .image').dimmer({
         on: 'hover'
       });
+
+      // Enable Smooth Scrolling
+      var scroll = new SmoothScroll('#header #header-menu .menu a');
     </script>
 
 
