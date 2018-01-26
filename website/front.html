@@ -122,6 +122,7 @@
         }
         #footer {
           font-size: 0.8em;
+          padding-bottom: 2em;
         }
       }
 
@@ -176,6 +177,7 @@
         }
         #footer {
           font-size: 1em;
+          padding-bottom: 2em;
         }
       }
 
@@ -229,6 +231,7 @@
         }
         #footer {
           font-size: 1.2em;
+          padding-bottom: 4em;
         }
       }
 
@@ -244,6 +247,7 @@
       #header #header-menu .left.menu {
         transition: background-color 0.5s ease;
         font-family: "ibmplexmono";
+        font-size: 1.2em;
       }
 
       #header #header-menu .left.menu :hover {
@@ -255,6 +259,7 @@
       #header #header-menu .right.menu {
         transition: background-color 0.5s ease;
         font-family: "ibmplexmono";
+        font-size: 1.2em;
       }
 
       #header #header-menu .right.menu :hover {
@@ -428,7 +433,6 @@
         background-color: #eeeeee !important;
         font-family: "ibmplexmonolight";
         padding-top: 4em;
-        padding-bottom: 4em;
       }
 
       #footer #contact .horizontal.divider {
@@ -439,15 +443,21 @@
       #footer #contact a {
         font-family: "ibmplexmonoxlight-i";
         color: #424242;
-        
+
         border-bottom: 1px dashed #424242;
       }
 
       #footer #contact a:hover {
         font-family: "ibmplexmonolight-i";
       }
-      
-      #footer #
+
+      #footer #contact #github {
+        padding-bottom: 2em;
+      }
+
+      #footer #contact #email {
+        padding-top: 2em;
+      }
     </style>
   </head>
 
@@ -476,10 +486,6 @@
             <span id="hidden">
               # </span>team
           </a>
-          <a data-scroll class="item" href="#contactus">
-            <span id="hidden">
-              # </span>contactus  
-          </a>
         </div>
 
       </div>
@@ -506,7 +512,7 @@
       <div class="ui padded basic segment" id="abstract">
         <div id="abstract-text" class="hyphenate">
 
-          With this tutorial, we aim to provide the participants with an overview of the field of Question Answering, insights into commonly faced problems, its recent trends and developments. At the end of the tutorial, the audience would have hands-on experience of developing two working QA systems- one based on rule-based semantic parsing, and another, a deep learning based method. In doing so, we hope to provide a suitable entry point for the people new to this field, and ease their process of making informed decisions while creating their QA solutions.
+          With this tutorial, we aim to provide the participants with an overview of the field of Question Answering, insights into commonly faced problems, its recent trends and developments. At the end of the tutorial, the audience would have hands-on experience of developing two working QA systems- one based on rule-based semantic parsing, and another, a deep learning based method. In doing so, we hope to provide a suitable entry point for the people new to this field, and ease their process of making informed decisions while creating their own QA systems.
         </div>
       </div>
 
@@ -914,38 +920,21 @@
         </div>
       </div>
 
-      <!--
-<div class="ui basic padded segment" id="contactus">
-
-<div class="section-header">
-Contact Us
-</div>
-
-<div class="contactdetails">
-Drop us a line on 
-
-</div>
-
-</div>
--->
-
     </div>
 
     <div class="ui padded footer vertical segment" id="footer">
-      <div class="ui stackable grid container">
-        
+      <div class="ui stackable middle aligned grid container">
+
         <div class="center aligned eight wide column" id="contact">
-          <div class="footer-header">
+          <div class="footer-header center aligned">
 
             <div id="github">
               Raise an issue on our 
               <a href="https://github.com/AskNowQA/QA-Tutorial/issues">repo</a>
             </div>
-            <br>
-<!--            <div class="ui horizontal divider">-->
-              or
-<!--            </div>-->
-            <br>
+            <!--            <div class="ui horizontal divider">-->
+            or
+            <!--            </div>-->
             <div id="email">
               Drop us a line at <a class="sameline" href="mailto:gaurav.maheshwari@uni-bonn.de?Subject=QA" target="_top">gaurav.maheshwari@uni-bonn.de</a>
             </div>
@@ -961,25 +950,25 @@ This tutorial is organized by members of the following organizations
 <br>
 -->
 
-          <div class="ui doubling padded grid">
-
-            <div class="eight wide column">
-
-              <a href="http://sda.tech" class="ui centered tiny image">
-
-              </a>
-              <img class="ui centered medium image" src="static/imgs/sdafull.png">
-            </div>
+          <div class="ui doubling padded middle aligned grid">
 
             <div class="eight wide center aligned column">
 
-              <a href="http://sda.tech" class="ui centered small image">
+              <a href="https://www.iais.fraunhofer.de/" class="ui centered small image">
                 <img src="static/imgs/iais.gif">
               </a> <br>
-              <a href="http://sda.tech" class="ui centered small image">
+              <a href="https://www.uni-bonn.de/" class="ui centered small image">
                 <img src="static/imgs/unibonn.png">
               </a>
 
+            </div>
+
+            <div class="eight wide column">
+
+              <a href="http://sda.tech" class="ui centered image">
+
+              <img src="static/imgs/sdafull.png">
+              </a>
             </div>
 
           </div>
@@ -989,9 +978,9 @@ This tutorial is organized by members of the following organizations
 
 
         </div>
-                
+
       </div>
-      
+
     </div>
 
 
