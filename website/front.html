@@ -451,12 +451,12 @@
         font-family: "ibmplexmonolight-i";
       }
 
-      #footer #contact #github {
-        padding-bottom: 2em;
+      #footer #contact .social.notlast {
+        padding-bottom: 0.6em;
       }
 
-      #footer #contact #email {
-        padding-top: 2em;
+      #footer #contact .social.notfirst {
+        padding-top: 0.6em;
       }
     </style>
   </head>
@@ -928,14 +928,20 @@
         <div class="center aligned eight wide column" id="contact">
           <div class="footer-header center aligned">
 
-            <div id="github">
+            <div class="social notlast" id="twitter">
+              Tell us our website's ugly on <a href="http://twitter.com/AskNowQA" target="_blank">twitter</a>
+            </div>
+            
+             or
+            
+            <div class="social notlast notfirst" id="github">
               Raise an issue on our 
               <a href="https://github.com/AskNowQA/QA-Tutorial/issues">repo</a>
             </div>
             <!--            <div class="ui horizontal divider">-->
             or
             <!--            </div>-->
-            <div id="email">
+            <div class="social notfirst" id="email">
               Drop us a line at <a class="sameline" href="mailto:gaurav.maheshwari@uni-bonn.de?Subject=QA" target="_top">gaurav.maheshwari@uni-bonn.de</a>
             </div>
 
@@ -963,7 +969,7 @@ This tutorial is organized by members of the following organizations
 
             </div>
 
-            <div class="eight wide column">
+            <div class="eight wide center aligned column">
 
               <a href="http://sda.tech" class="ui centered image">
 
