@@ -125,7 +125,7 @@
           line-height: 2rem;
         }
 
-        #body #people #people-cards .card .name.content a {
+        #body #people #people-cards .card .name.content .header {
           font-size: 0.7rem;
         }
 
@@ -177,7 +177,7 @@
           line-height: 2rem;
         }
 
-        #body #people #people-cards .card .name.content a {
+        #body #people #people-cards .card .name.content .header {
           font-size: 0.7rem;
         }
 
@@ -223,7 +223,7 @@
           line-height: 2rem;
         }
 
-        #body #people #people-cards .card .name.content a {
+        #body #people #people-cards .card .name.content .header {
           font-size: 1.1em;
           line-height: 1.1em;
         }
@@ -232,7 +232,7 @@
           font-size: 1.2em;
           line-height: 2em;
         }
-        #body #people #people-cards .card .image .content a:hover{
+        #body #people #people-cards .card .image .content a:hover {
           font-size: 1.4em;
         }
       }
@@ -385,10 +385,6 @@
         border-radius: 0;
       }
 
-      #body #people #people-cards .card .image {
-        background-color: #eeeeee;
-      }
-
       #body #people #people-cards .card .image:hover {
         box-shadow: none;
       }
@@ -411,15 +407,16 @@
         transition: font-size 0.1s ease;
         color: white;
       }
+
       #body #people #people-cards .card .image .content a:hover {
         font-family: "ibmplexmono";
         transition: font-size 0.1s ease;
       }
 
-      #body #people #people-cards .card .name.content a {
+      #body #people #people-cards .card .name.content .header {
         font-family: "ibmplexmonoxxlight";
+        text-align: right;
       }
-
     </style>
   </head>
 
@@ -436,13 +433,17 @@
         </div>
 
         <div class="right menu">
-          <a class="item" href="#abstract">
+          <a data-scroll class="item" href="#abstract">
             <span id="hidden">
-              # </span>Abstract
+              # </span>abstract
           </a>
-          <a class="item" href="#sessions">
+          <a data-scroll class="item" href="#sessions">
             <span id="hidden">
-              # </span>Sessions
+              # </span>sessions
+          </a>
+          <a data-scroll class="item" href="#people">
+            <span id="hidden">
+              # </span>team
           </a>
         </div>
 
@@ -631,43 +632,14 @@
 
         <div class="ui four doubling  cards" id="people-cards">
 
-          <!--
-<div class="ui card">
-<div class="ui left slide masked reveal image">
-<img src="static/imgs/lehmann.jpg" class="visible content">
-<div class="hidden links content">
-
-<a href="http://sda.tech/people/prof-dr-jens-lehmann/">
-/* sda page */
-</a> 
-
-<br>
-
-<a href="https://www.linkedin.com/in/jenslehmann82/">
-/* linkedin */
-</a>
-
-<br>
-
-<a  href="https://twitter.com/JLehmann82">
-/* twitter */
-</a>
-
-</div>
-</div>
-<div class="content">
-<a class="center aligned header">Prof. Dr. Jens Lehmann</a>
-</div>
-</div>
---> 
           <div class="card">
             <div class="blurring dimmable image">
               <div class="ui dimmer">
                 <div class="content">
                   <div class="center">
                     <a href="http://sda.tech/people/prof-dr-jens-lehmann/">
-                      /* sda page */
-                    </a> 
+                      /* page */
+                    </a>
 
                     <br>
 
@@ -677,7 +649,7 @@
 
                     <br>
 
-                    <a  href="https://twitter.com/JLehmann82">
+                    <a href="https://twitter.com/JLehmann82">
                       /* twitter */
                     </a>
                   </div>
@@ -686,150 +658,225 @@
               <img src="static/imgs/lehmann.jpg">
             </div>
             <div class="name content">
-              <a class="header">Prof. Dr. Jens Lehmann</a>
-              <!--
-<div class="meta">
-<span class="date">Create in Sep 2014</span>
-</div>
--->
-            </div>
-            <!--
-<div class="extra content">
-<a>
-<i class="users icon"></i>
-2 Members
-</a>
-</div>
--->
-          </div>
-
-          <div class="ui card">
-            <div class="ui slide  masked reveal image">
-              <img src="static/imgs/both.jpgg.jpg" class="visible content">
-              <span class="name hidden content">
-                Dr. Andreas Both
-              </span>
+              <span class="header">Prof. Dr. Jens Lehmann</span>
             </div>
           </div>
-
-
 
           <div class="card">
-            <div class="image">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <a href="http://wdaqua.eu/supervisors/andreas-both/">
+                      /* page */
+                    </a>
+
+                    <br>
+
+                    <a href="https://www.linkedin.com/in/andreas-both-94267222">
+                      /* linkedin */
+                    </a>
+
+                    <br>
+
+                    <!--
+<a  href="https://twitter.com/JLehmann82">
+/* twitter */
+</a>
+-->
+                  </div>
+                </div>
+              </div>
+              <img src="static/imgs/both.jpgg.jpg">
+            </div>
+            <div class="name content">
+              <span class="header">Dr. Andreas Both</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <a href="http://sda.tech/people/dr-ioanna-lytra/">
+                      /* page */
+                    </a>
+
+                    <br>
+
+                    <a href="https://www.linkedin.com/in/ioanna-lytra-77369417/">
+                      /* linkedin */
+                    </a>
+
+                    <br>
+
+                    <a href="https://twitter.com/ilytra">
+                      /* twitter */
+                    </a>
+                  </div>
+                </div>
+              </div>
               <img src="static/imgs/Ioanna.jpg">
             </div>
+            <div class="name content">
+              <span class="header">Dr. Ioanna Lytra</span>
+            </div>
           </div>
+
           <div class="card">
-            <div class="image">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <a href="http://sda.tech/people/mohnish-dubey/">
+                      /* page */
+                    </a>
+
+                    <br>
+
+                    <a href="https://www.linkedin.com/in/mohnish-dubey-bonn/">
+                      /* linkedin */
+                    </a>
+
+                    <br>
+
+                    <a href="https://twitter.com/MohnishDubey">
+                      /* twitter */
+                    </a>
+                  </div>
+                </div>
+              </div>
               <img src="static/imgs/dubey.jpg">
             </div>
+            <div class="name content">
+              <span class="header">Mohnish Dubey</span>
+            </div>
           </div>
+
           <div class="card">
-            <div class="image">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <a href="http://sda.tech/people/denis-lukovnikov/">
+                      /* page */
+                    </a>
+
+                    <br>
+
+                    <a href="https://www.linkedin.com/in/lukovnikovdenis/">
+                      /* linkedin */
+                    </a>
+
+                    <br>
+
+                    <a href="https://twitter.com/lukovnikov">
+                      /* twitter */
+                    </a>
+                  </div>
+                </div>
+              </div>
               <img src="static/imgs/Denis.png">
             </div>
+            <div class="name content">
+              <span class="header">Denis Lukovnikov</span>
+            </div>
           </div>
+
+
           <div class="card">
-            <div class="image">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <a href="http://sda.tech/people/kuldeep-singh/">
+                      /* page */
+                    </a>
+
+                    <br>
+
+                    <a href="https://www.linkedin.com/in/kuldeep-singh-67a4a840/">
+                      /* linkedin */
+                    </a>
+
+                    <br>
+
+                    <a href="https://twitter.com/OyeKuldeep">
+                      /* twitter */
+                    </a>
+                  </div>
+                </div>
+              </div>
               <img src="static/imgs/kuldeep.jpg">
             </div>
-          </div>
-          <div class="card">
-            <div class="image">
-              <img src="static/imgs/maheshwari.jpg">
+            <div class="name content">
+              <a class="header">Kuldeep Singh</a>
             </div>
           </div>
+
           <div class="card">
-            <div class="image">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <a href="http://sda.tech/people/gaurav-maheshwari/">
+                      /* page */
+                    </a>
+
+                    <br>
+
+                    <a href="https://www.linkedin.com/in/maheshwarigaurav1/">
+                      /* linkedin */
+                    </a>
+
+                    <br>
+
+                    <a href="https://twitter.com/saist007">
+                      /* twitter */
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <img src="static/imgs/maheshwari.jpg">
+            </div>
+            <div class="name content">
+              <a class="header">Gaurav Maheshwari</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <a href="http://sda.tech/people/priyansh-trivedi/">
+                      /* page */
+                    </a>
+
+                    <br>
+
+                    <a href="https://www.linkedin.com/in/priyanshtrivedi/">
+                      /* linkedin */
+                    </a>
+
+                    <br>
+
+                    <a href="https://twitter.com/ekandekha_comma">
+                      /* twitter */
+                    </a>
+                  </div>
+                </div>
+              </div>
               <img src="static/imgs/trivedi.jpg">
+            </div>
+            <div class="name content">
+              <a class="header">Priyansh Trivedi</a>
             </div>
           </div>
 
         </div>
       </div>
-
-
-      <!--
-<div class="ui padded basic segment" id="people">
-
-<div class="section-header">
-Team2 
-</div>
-
-<div class="ui stackable grid">
-
-
-<div class="card">
-<div class="ui move up reveal">
-<div class="visible content">
-
-<div class="image">
-<img src="static/imgs/both.jpgg.jpg">
-</div>
-</div>
-<div class="hidden content">
-<div>
-Denis Lukovnikov
-</div>
-</div>
-</div>
-
-</div>
-
-<div class="ui move up reveal">
-<div class="visible content">
-<div class="card">
-<div class="image">
-<img src="static/imgs/both.jpgg.jpg">
-</div>
-</div>
-</div>
-<div class="hidden content">
-<div>
-Denis Lukovnikov
-</div>
-</div>
-</div>
-
-</div>
-
-<div class="ui four doubling  cards" id="people-cards">
-
-<div class="card">
-<div class="image">
-<img src="static/imgs/lehmann.jpg">
-</div>
-<div class="content">
-<a class="center aligned header">Prof. Dr. Jens Lehmann</a>
-</div>
-</div>
-
-
-<div class="card">
-<div class="image">
-<img src="static/imgs/both.jpgg.jpg">
-</div>
-</div>
-
-<div class="ui move up reveal">
-<div class="visible content">
-<div class="card">
-<div class="image">
-<img src="static/imgs/both.jpgg.jpg">
-</div>
-</div>
-</div>
-<div class="hidden content">
-<div>
-Denis Lukovnikov
-</div>
-</div>
-</div>
-
-
-</div>
-</div>
--->
 
     </div>
 
@@ -837,7 +884,13 @@ Denis Lukovnikov
     </div>
 
 
+    <script src="static/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+
+
     <script type="text/javascript">
+      // Enable Smooth Scrolling
+      var scroll = new SmoothScroll('#header #header-menu .menu a');
+
       $('#body #interlude')
         .dimmer({
         on: 'hover'
