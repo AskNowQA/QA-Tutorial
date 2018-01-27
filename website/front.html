@@ -179,6 +179,10 @@
           font-size: 1em;
           padding-bottom: 2em;
         }
+        
+        #footer #organization {
+/*          border-top: 1px dashed #e0e0e0;*/
+        }
       }
 
       @media screen and (min-device-width: 800px) {
@@ -458,6 +462,10 @@
       #footer #contact .social.notfirst {
         padding-top: 0.6em;
       }
+      
+      #footer #organization .grid {
+        padding-top: 2em;
+      }
     </style>
   </head>
 
@@ -530,7 +538,7 @@
 
             <div class="item first">
               <div class="image">
-                <img src="static/imgs/5431a80b-9ab9-486c-906a-e3d4b5ccaa96-hello-world.png">
+                <img src="static/imgs/helloworldcustom.png">
               </div>
               <div class="content">
                 <span class="header">Introduction to <span class="sameline">Question Answering</span></span>
@@ -544,7 +552,7 @@
 
             <div class="item">
               <div class="image">
-                <img src="static/imgs/graph.png" su>
+                <img src="static/imgs/semparsecustom.png">
               </div>
               <div class="content">
                 <span class="header"> <span class="handsontext">Hands-On:</span> Semantic Parsing based QA using <a class="popup" href="https://github.com/WDAqua/Qanary" data-tooltip="Visit QANARY's repo">QANARY</a></span>
@@ -565,7 +573,7 @@
 
             <div class="item">
               <div class="image">
-                <img src="static/imgs/helloworld.png">
+                <img src="static/imgs/paperpaperpapercustom.PNG">
               </div>
               <div class="content">
                 <span class="header"> 
@@ -588,7 +596,7 @@
 
             <div class="item last">
               <div class="image">
-                <img src="static/imgs/helloworld.png">
+                <img src="static/imgs/nnqa.PNG">
               </div>
               <div class="content">
                 <span class="header"> 
@@ -923,7 +931,7 @@
     </div>
 
     <div class="ui padded footer vertical segment" id="footer">
-      <div class="ui stackable middle aligned grid container">
+      <div class="ui stackable middle aligned divided grid container">
 
         <div class="center aligned eight wide column" id="contact">
           <div class="footer-header center aligned">
@@ -931,53 +939,72 @@
             <div class="social notlast" id="twitter">
               Tell us our website's ugly on <a href="http://twitter.com/AskNowQA" target="_blank">twitter</a>
             </div>
-            
-             or
-            
+
+            or
+
             <div class="social notlast notfirst" id="github">
               Raise an issue on our 
               <a href="https://github.com/AskNowQA/QA-Tutorial/issues">repo</a>
             </div>
-            <!--            <div class="ui horizontal divider">-->
             or
-            <!--            </div>-->
             <div class="social notfirst" id="email">
               Drop us a line at <a class="sameline" href="mailto:gaurav.maheshwari@uni-bonn.de?Subject=QA" target="_top">gaurav.maheshwari@uni-bonn.de</a>
             </div>
 
           </div>
         </div>
-        <div class="left aligned eight wide column" id="organization">
+        <div class="center aligned eight wide column" id="organization">
 
-          <!--
-<span>
-This tutorial is organized by members of the following organizations
-</span> 
-<br>
--->
+          <a href="http://sda.tech" class="ui centered medium image">
+            <img src="static/imgs/sdafull.png">
+          </a>
 
-          <div class="ui doubling padded middle aligned grid">
+          <div class="ui centered three column wide grid">
 
-            <div class="eight wide center aligned column">
-
-              <a href="https://www.iais.fraunhofer.de/" class="ui centered small image">
+            <div class="center aligned column">
+              <a href="http://sda.tech" class="ui centered small image">
+                <img src="static/imgs/wdaqua.png">
+              </a>
+            </div>
+            
+            <div class="center aligned column">
+              <a href="http://wdaqua.eu/" class="ui centered small image">
                 <img src="static/imgs/iais.gif">
-              </a> <br>
-              <a href="https://www.uni-bonn.de/" class="ui centered small image">
+              </a>
+            </div>
+            
+            <div class="left aligned column">
+              <a href="http://wdaqua.eu/" class="ui small image">
                 <img src="static/imgs/unibonn.png">
               </a>
-
             </div>
-
-            <div class="eight wide center aligned column">
-
-              <a href="http://sda.tech" class="ui centered image">
-
-              <img src="static/imgs/sdafull.png">
-              </a>
-            </div>
-
+            
           </div>
+
+          <!--
+<div class="ui doubling padded middle aligned grid">
+
+<div class="eight wide center aligned column">
+
+<a href="https://www.iais.fraunhofer.de/" class="ui centered small image">
+<img src="static/imgs/iais.gif">
+</a> <br>
+<a href="https://www.uni-bonn.de/" class="ui centered small image">
+<img src="static/imgs/unibonn.png">
+</a>
+
+</div>
+
+<div class="eight wide center aligned column">
+
+<a href="http://sda.tech" class="ui centered image">
+
+<img src="static/imgs/sdafull.png">
+</a>
+</div>
+
+</div>
+-->
 
 
 
