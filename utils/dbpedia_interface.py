@@ -20,7 +20,6 @@ import numpy as np
 import traceback
 import warnings
 import pickle
-import redis
 import json
 
 # Our scripts
@@ -79,6 +78,7 @@ class DBPedia:
         self.verbose = _verbose
         self.sparql_endpoint = DBPEDIA_ENDPOINTS[0]
         if caching:
+            import redis
             self.r = redis.StrictRedis(host=REDIS_HOSTNAME, port=6379, db=_db_name)
         else:
             self.r = False
