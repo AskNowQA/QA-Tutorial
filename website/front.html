@@ -70,6 +70,10 @@
       .sameline {
         white-space: nowrap;
       }
+        
+        #interlude-header {
+            text-align: center;
+        }
 
       /* FONT + MEDIA QUERIES */
 
@@ -100,11 +104,14 @@
 
         #body #interlude #readinglist {
           border-bottom: 1px dashed #BDBDBD;
+        
         }
 
         #body #interlude .interlude-header-main {
           font-size: 2rem;
           line-height: 2rem;
+            width: inherit;
+            text-align: center;
         }
 
         #body #interlude .interlude-header .interlude-header-sub {
@@ -154,7 +161,8 @@
         }
 
         #body #interlude #readinglist {
-          border-bottom: 1px dashed #BDBDBD;
+/*          border-bottom: 1px dashed #BDBDBD;*/
+            text-align: center;
         }
 
         #body #interlude .interlude-header-main {
@@ -208,12 +216,15 @@
         }
 
         #body #interlude #readinglist {
-          border-right: 1px dashed #BDBDBD;
+/*          border-right: 1px dashed #BDBDBD;*/
+            text-align: center;
         }
 
         #body #interlude .interlude-header-main {
           font-size: 2rem;
           line-height: 2rem;
+            width: inherit;
+            text-align: center;
         }
 
         #body #interlude .interlude-header .interlude-header-sub {
@@ -364,6 +375,11 @@
       #body #interlude {
         background-color: #EEEEEE;
       }
+        
+        #body #readinglist a {
+                    border-bottom: 1px dashed #424242;
+                color: #424242;
+        }
 
       #body #interlude .interlude-header {
         font-family: "ibmplexmonoxxlight", monospace;
@@ -578,7 +594,7 @@
               <div class="content">
                 <span class="header"> 
 
-                  Recent works <span class="connecter">and</span> Introduction to Deep Learning for QA
+                  Introduction to Deep Learning for QA
 
                 </span>
 
@@ -632,8 +648,9 @@
       </div>
 
 
-      <div class="ui padded basic two column grid stackable grid segment" id="interlude">
+      <div class="ui padded basic stackable segment" id="interlude">
 
+<!--
         <div class="ui dimmer">
           <div class="content">
             <div class="center">
@@ -643,18 +660,16 @@
             </div>
           </div>
         </div>
+-->
 
-        <div class="center aligned column" id="readinglist">
-          <div class="interlude-header">
-            <span class="interlude-header-main">
-              /* reading list */
-            </span> <br>
-            <span class="interlude-header-sub">
-              (suggested)
-            </span>
-          </div>
+        <div class="center aligned interlude-header" id="readinglist">
+          
+            <a class="interlude-header-main" href="https://github.com/AskNowQA/QA-Tutorial" data-tooltip="Github link">
+                <b>/* slides, programs and other data here */</b>
+            </a> 
         </div>
 
+<!--
         <div class="center aligned column" id="requirements">
           <div class="interlude-header">
             <span class="interlude-header-main">
@@ -666,6 +681,7 @@
           </div>
 
         </div>
+-->
 
       </div>
 
@@ -993,10 +1009,10 @@
 
 
     <script type="text/javascript">
-      $('#body #interlude')
-        .dimmer({
-        on: 'hover'
-      });
+//      $('#body #interlude')
+//        .dimmer({
+//        on: 'hover'
+//      });
 
       $('#body #people #people-cards .card .image').dimmer({
         on: 'hover'
