@@ -85,17 +85,17 @@ def run(lr=0.001,
             # endregion
 
             loss = rank_model(questions_batch, good_chains, bad_chains).mean()
-            print(loss.item())
+            print("{:.3f}".format(loss.item()))
 
             loss.backward()
 
             optimizer.step()
         print("Validating")
         valid_numbers = test_model(score_model, validdata, qsm, csm, goldchainids, badchainids, "valid")
-        print("Recall@1: {:.3f} \t Recall@5: {:.3f} \t ({} examples)".format(*(valid_numbers + [len(validdata[0])])))
+        print("Recall@1: {:.3f} \t Recall@5: {:.3f} \t ({} examples)".format(valid_numbers[0], valid_numbers[1], len(validdata[0])))
     print("Testing")
     test_numbers = test_model(score_model, testdata, qsm, csm, goldchainids, badchainids, "test")
-    print("Recall@1: {:.3f} \t Recall@5: {:.3f} \t ({} examples)".format(*(test_numbers + [len(testdata[0])])))
+    print("Recall@1: {:.3f} \t Recall@5: {:.3f} \t ({} examples)".format(test_numbers[0], test_numbers[1], len(testdata[0])))
 
 
 def test_model(scoremodel, _data, qsm, csm, good_chain_ids, bad_chain_ids, prefix):     # TODO
