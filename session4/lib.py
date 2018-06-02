@@ -272,7 +272,7 @@ def iscuda(x):
         raise SumTingWongException("unsupported type")
 
 
-def load_jsons(datap="resources/denis_qald_combined.json",
+def load_jsons(datap="resources/qald_combined.json",
                relp="resources/nrels.json",
                mode="flat"):
     """ relp: file must contain dictionary mapping relation ids (ints) to lists of words (strings)"""
