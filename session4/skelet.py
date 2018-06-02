@@ -34,6 +34,7 @@ class ScoreModel(torch.nn.Module):
     # ---------------------------------------------------------------------
     pass
 
+
 def run(lr=0.001,
         batch_size=10,
         epochs=100,
