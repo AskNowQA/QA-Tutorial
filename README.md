@@ -27,5 +27,8 @@ You may need to to install some python libraries as well. See Requirements secti
 ## Requirements
 linux distro with a python installation. 
 Use
-``` pip install requirements.txt```
+
+```sh session4/pkgs/install_dep.sh'''
 to install all the necessary packages.
+
+To install miniconda use https://conda.io/miniconda.html
