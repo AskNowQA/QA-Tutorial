@@ -1,0 +1,1034 @@
+<html>
+
+  <head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+
+    <script src="./static/semanticui/semantic.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Scope+One|Roboto+Condensed:300,400,700|Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono:300,400|Fira+Sans+Condensed|Fira+Sans:300,400,500,600,700,800" rel="stylesheet">
+
+
+    <!-- Site Properties -->
+    <title>QA Tutorial | Smart Data Analytics</title>
+    <link rel="stylesheet" type="text/css" href="./static/semanticui/semantic.min.css">
+    <style type="text/css">
+      /* Fonts */
+
+      @font-face {
+        font-family: 'ibmplexmono-i';
+        src: url('static/fonts/ibm-plex/IBMPlexMono-Italic.otf');
+      }
+
+      @font-face {
+        font-family: 'ibmplexmono';
+        src: url('static/fonts/ibm-plex/IBMPlexMono-Regular.otf');
+      }
+
+      @font-face {
+        font-family: 'ibmplexmonolight';
+        src: url('static/fonts/ibm-plex/IBMPlexMono-Light.otf');
+      }
+
+      @font-face {
+        font-family: 'ibmplexmonobold';
+        src: url('static/fonts/ibm-plex/IBMPlexMono-Bold.otf');
+      }
+
+      @font-face {
+        font-family: 'ibmplexmonolight-i';
+        src: url('static/fonts/ibm-plex/IBMPlexMono-LightItalic.otf');
+      }
+
+      @font-face {
+        font-family: 'ibmplexmonoxlight-i';
+        src: url('static/fonts/ibm-plex/IBMPlexMono-ExtraLightItalic.otf');
+      }
+
+      @font-face {
+        font-family: 'ibmplexmonoxlight';
+        src: url('static/fonts/ibm-plex/IBMPlexMono-ExtraLight.otf');
+      }
+
+      @font-face {
+        font-family: 'ibmplexmonoxxlight';
+        src: url('static/fonts/ibm-plex/IBMPlexMono-Thin.otf');
+      }
+
+      /* System Wide */
+
+      body {
+        font-family: 'ibmplexmono';
+        color: #424242;
+      }
+
+      .sameline {
+        white-space: nowrap;
+      }
+        
+        #interlude-header {
+            text-align: center;
+        }
+
+      /* FONT + MEDIA QUERIES */
+
+      @media screen and (max-device-width: 320px) {
+        /* Failsafe */
+        #body #intro #main-text {
+          font-size: 2.5rem;
+          line-height: 2.5rem;
+        }
+
+        #body #intro #main-subtext {
+          font-size: 1rem;
+          line-height: 1rem;
+        }
+
+        #body #abstract #abstract-text {
+          font-size: 1.1em;
+          line-height: 1.5em;
+        }
+
+        #body .section-header {
+          font-size: 1.3rem;
+        }
+
+        #header {
+          display: none;
+        }
+
+        #body #interlude #readinglist {
+          border-bottom: 1px dashed #BDBDBD;
+        
+        }
+
+        #body #interlude .interlude-header-main {
+          font-size: 2rem;
+          line-height: 2rem;
+            width: inherit;
+            text-align: center;
+        }
+
+        #body #interlude .interlude-header .interlude-header-sub {
+          font-size: 1.3rem;
+          line-height: 2rem;
+        }
+
+        #body #people #people-cards .card .name.content .header {
+          font-size: 0.7rem;
+        }
+
+        #body #people #people-cards .card .image .content a {
+          font-size: 0.9em;
+          line-height: 2em;
+        }
+        #footer {
+          font-size: 0.8em;
+          padding-bottom: 2em;
+        }
+      }
+
+      @media screen and (min-device-width: 320px) and (max-device-width: 801px) {
+        /* Regular phones */
+        #body #intro #main-text {
+          font-size: 3rem;
+          line-height: 3.5rem;
+        }
+
+        #body #intro #main-subtext {
+          font-size: 1.3rem;
+          line-height: 2rem;
+        }
+
+        #body #abstract #abstract-text {
+          font-size: 1.1em;
+          line-height: 1.3em;
+        }
+
+        #body .section-header {
+          font-size: 1.8rem;
+          text-align: center;
+          line-height: 2rem;
+        }
+
+        #header {
+          display: none;
+        }
+
+        #body #interlude #readinglist {
+/*          border-bottom: 1px dashed #BDBDBD;*/
+            text-align: center;
+        }
+
+        #body #interlude .interlude-header-main {
+          font-size: 2rem;
+          line-height: 2rem;
+        }
+
+        #body #interlude .interlude-header .interlude-header-sub {
+          font-size: 1.3rem;
+          line-height: 2rem;
+        }
+
+        #body #people #people-cards .card .name.content .header {
+          font-size: 0.7rem;
+        }
+
+        #body #people #people-cards .card .image .content a {
+          font-size: 0.9em;
+          line-height: 2em;
+        }
+        #footer {
+          font-size: 1em;
+          padding-bottom: 2em;
+        }
+        
+        #footer #organization {
+/*          border-top: 1px dashed #e0e0e0;*/
+        }
+      }
+
+      @media screen and (min-device-width: 800px) {
+        #body #intro #main-text {
+          font-size: 4rem;
+          line-height: 5rem;
+        }
+
+        #body #intro #main-subtext {
+          font-size: 1.8rem;
+          line-height: 2.5rem;
+        }
+
+        #body #abstract #abstract-text {
+          font-size: 1.5em;
+          line-height: 2em;
+        }
+
+        #body .section-header {
+          font-size: 2.5rem;
+          line-height: 3.5rem;
+          text-align: right;
+        }
+
+        #body #interlude #readinglist {
+/*          border-right: 1px dashed #BDBDBD;*/
+            text-align: center;
+        }
+
+        #body #interlude .interlude-header-main {
+          font-size: 2rem;
+          line-height: 2rem;
+            width: inherit;
+            text-align: center;
+        }
+
+        #body #interlude .interlude-header .interlude-header-sub {
+          font-size: 1.3rem;
+          line-height: 2rem;
+        }
+
+        #body #people #people-cards .card .name.content .header {
+          font-size: 1.1em;
+          line-height: 1.1em;
+        }
+
+        #body #people #people-cards .card .image .content a {
+          font-size: 1.2em;
+          line-height: 2em;
+        }
+        #body #people #people-cards .card .image .content a:hover {
+          font-size: 1.4em;
+        }
+        #footer {
+          font-size: 1.2em;
+          padding-bottom: 4em;
+        }
+      }
+
+      #header #hidden {
+        color: white;
+        font-family: "Fira Mono";
+      }
+
+      #header .right.menu .item:hover #hidden {
+        color: #424242
+      }
+
+      #header #header-menu .left.menu {
+        transition: background-color 0.5s ease;
+        font-family: "ibmplexmono";
+        font-size: 1.2em;
+      }
+
+      #header #header-menu .left.menu :hover {
+        transition: background-color 0.5s ease;
+        background-color: #EEEEEE;
+        border-radius: 4px;
+      }
+
+      #header #header-menu .right.menu {
+        transition: background-color 0.5s ease;
+        font-family: "ibmplexmono";
+        font-size: 1.2em;
+      }
+
+      #header #header-menu .right.menu :hover {
+        transition: background-color 0.5s ease;
+        background-color: #EEEEEE;
+        border-radius: 4px;
+      }
+
+      #body #intro {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      #body #intro #main-text {
+        text-rendering: optimizeLegibility;
+        font-family: "ibmplexmonolight";
+        font-weight: 500;
+        letter-spacing: -0.06rem;
+      }
+
+      #body #intro #main-subtext a {
+        text-rendering: optimizeLegibility;
+        font-family: "ibmplexmonoxxlight";
+        border-bottom: 1px dashed #424242;
+        padding-top: 0.5em;
+        color: #424242;
+      }
+
+      #body #intro #main-subtext a:hover {
+        font-family: "ibmplexmonolight";
+      }
+
+      #body .divider.header {
+        color: #424242;
+      }
+
+      #body #abstract #abstract-text {
+        font-family: "ibmplexmono";
+        text-align: justify;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        padding-bottom: 2em;
+        padding-top: 2em;
+      }
+
+      #body .section-header {
+        font-family: "ibmplexmonobold", monospace;
+        /*        text-align: right;*/
+        padding-bottom: 1em;
+      }
+
+      #body #sessions #content .item.first {
+        padding-top: 2em;
+      }
+
+      #body #sessions #content .item {
+        padding-bottom: 4em;
+      }
+
+      #body #sessions #content .item.last {
+        padding-bottom: 1em;
+      }
+
+      #body #sessions #content .item .content .header {
+        font-family: "ibmplexmonolight-i";
+        padding-top: 0.3em;
+        color: #424242;
+        line-height: 1.2em;
+        font-size: 1.5em;
+      }
+
+      #body .popup {
+        color: inherit;
+        border-bottom: 1px dashed #424242;
+      }
+
+      #body #sessions #content .item .content .description {
+        line-height: 1.1em;
+        font-size: 1.1em;
+        text-align: justify;
+      }
+
+      #body #sessions #content .item .content span.handsontext {
+        font-family: "ibmplexmono";
+      }
+
+      /* Interlude stuff */
+
+      #body #interlude {
+        border-radius: 1em;
+        /*        border: 1.5px dashed #9E9E9E;*/
+      }
+
+      #body #interlude {
+        background-color: #EEEEEE;
+      }
+        
+        #body #readinglist a {
+                    border-bottom: 1px dashed #424242;
+                color: #424242;
+        }
+
+      #body #interlude .interlude-header {
+        font-family: "ibmplexmonoxxlight", monospace;
+      }
+
+      #body #interlude .interlude-header-dimmer {
+        font-family: "ibmplexmonolight-i", monospace;
+        color: #E0E0E0;
+      }
+
+      #body #interlude .interlude-header-sub {
+        font-family: "ibmplexmonoxlight-i", monospace;
+      }
+
+      #body #above-interlude {
+        margin-top: 4em;
+      }
+
+      /* People Section */
+
+      #body #people {
+        margin-bottom: 4em;
+      }
+
+      #body #people #people-cards {
+        padding-top: 2em;
+      }
+
+      #body #people #people-cards .card {
+        background-color: #EEEEEE;
+        box-shadow: none;
+        border-bottom-color: white;
+        border-radius: 0;
+      }
+
+      #body #people #people-cards .card .image:hover {
+        box-shadow: none;
+      }
+
+      #body #people #people-cards .card .image img:hover {
+        box-shadow: none;
+      }
+
+      #body #people #people-cards .card .image .dimmer:hover {
+        box-shadow: none;
+      }
+
+      #body #people #people-cards .card .image img {
+        box-shadow: none;
+      }
+
+      #body #people #people-cards .card .image .content a {
+        font-family: "ibmplexmonoxxlight";
+        border-bottom: 1px dashed #EEEEEE;
+        transition: font-size 0.1s ease;
+        color: white;
+      }
+
+      #body #people #people-cards .card .image .content a:hover {
+        font-family: "ibmplexmono";
+        transition: font-size 0.1s ease;
+      }
+
+      #body #people #people-cards .card .name.content .header {
+        font-family: "ibmplexmonolight";
+        text-align: right;
+        color: #424242;
+      }
+
+      #footer {
+        background-color: #eeeeee !important;
+        font-family: "ibmplexmonolight";
+        padding-top: 4em;
+      }
+
+      #footer #contact .horizontal.divider {
+        color: #9E9E9E;
+        font-family: "ibmplexmonoxxlight";
+      }
+
+      #footer #contact a {
+        font-family: "ibmplexmonoxlight-i";
+        color: #424242;
+
+        border-bottom: 1px dashed #424242;
+      }
+
+      #footer #contact a:hover {
+        font-family: "ibmplexmonolight-i";
+      }
+
+      #footer #contact .social.notlast {
+        padding-bottom: 0.6em;
+      }
+
+      #footer #contact .social.notfirst {
+        padding-top: 0.6em;
+      }
+      
+      #footer #organization .grid {
+        padding-top: 2em;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div id="header" class="ui top text large menu">
+      <div id="header-menu" class="ui container">
+
+        <div class="left menu">
+          <a class="item" href="http://sda.tech/research-topic/semantic-question-answering/">
+            <i class="angle left icon" id="titleicon"></i>
+            <span class="underline" id="title">AskNow </span>
+          </a>
+        </div>
+
+        <div class="right menu">
+          <a data-scroll class="item" href="#abstract">
+            <span id="hidden">
+              # </span>abstract
+          </a>
+          <a data-scroll class="item" href="#sessions">
+            <span id="hidden">
+              # </span>sessions
+          </a>
+          <a data-scroll class="item" href="#people">
+            <span id="hidden">
+              # </span>team
+          </a>
+          <a data-scroll class="item" href="https://github.com/AskNowQA/QA-Tutorial">
+            <span id="hidden">
+              # </span>resources
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="body" class="ui stackable container">
+
+      <!--Title -->
+      <div class="ui padded basic center aligned segment" id="intro">
+        <h1 id="main-text">
+          Build a Question Answering System Overnight
+        </h1>
+        <h4 id="main-subtext">
+          <a href="https://2018.eswc-conferences.org/">
+            @ ESWC 2018
+          </a>
+        </h4>
+      </div>
+
+      <h4 class="ui horizontal divider header">
+        <i class="angle down icon"></i>
+      </h4>
+
+      <div class="ui padded basic segment" id="abstract">
+        <div id="abstract-text" class="hyphenate">
+
+          With this tutorial, we aim to provide the participants with an overview of the field of Question Answering, insights into commonly faced problems, its recent trends and developments. At the end of the tutorial, the audience would have hands-on experience of developing two working QA systems- one based on rule-based semantic parsing, and another, a deep learning based method. In doing so, we hope to provide a suitable entry point for the people new to this field, and ease their process of making informed decisions while creating their own QA systems.
+        </div>
+      </div>
+
+      <div class="ui divider">
+
+      </div>
+
+      <div class="ui padded basic segment" id="sessions">
+        <div class="section-header">
+          Session Details
+        </div>
+
+        <div id="content">
+          <div class="ui items">
+
+            <div class="item first">
+              <div class="image">
+                <img src="static/imgs/helloworldcustom.png">
+              </div>
+              <div class="content">
+                <span class="header">Introduction to <span class="sameline">Question Answering</span></span>
+                <div class="description">
+                  <p>
+                    The primary object of this session would be to give an overview of QA over knowledge graphs. This will include common source KGs, the datasets used to evaluate QA systems, an overview of the prominent types of approaches, and familiarizing the audience with the sub-tasks (like entity linking, predicate linking) and the terminology used in the community. We will then introduce the basic concepts of NLP needed for semantic parsing based QA systems (for the next session.).
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="image">
+                <img src="static/imgs/semparsecustom.png">
+              </div>
+              <div class="content">
+                <span class="header"> <span class="handsontext">Hands-On:</span> Semantic Parsing based QA using <a class="popup" href="https://github.com/WDAqua/Qanary" data-tooltip="Visit QANARY's repo">QANARY</a></span>
+                <div class="meta">
+                  <span>
+                    Requirements: 
+                    <a class="popup" data-tooltip="version: TBD">java</a>; 
+                    <a class="popup" href="https://www.stardog.com/" data-tooltip="setup stardog from here">stardog</a>
+                  </span>
+                </div>
+                <div class="description">
+                  <p>
+                    In this hands-on session, we will build our first QA system using QANARY - a methodoloy for choreographing QA pipelines distributed over the Web. We will also demonstrate how to build components for QANARY. In the process, we will introduce different concepts of Semantic Parsing relevant for QA.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="image">
+                <img src="static/imgs/paperpaperpapercustom.PNG">
+              </div>
+              <div class="content">
+                <span class="header"> 
+
+                  Introduction to Deep Learning for QA
+
+                </span>
+
+                <div class="description">
+                  <p>
+                    In this session, we will have a more specific discussion of different approaches for QA, based on a selection of recent works in the field. This will also include some less traditional approaches like rule learning, and question paraphrasing, using textual evidence. Towards the end, we will introduce the basics of Deep Learning, and the prerequisites for the next hands-on session.
+                  </p>
+                </div>
+                <div class="extra">
+
+
+                </div>
+              </div>
+            </div>
+
+            <div class="item last">
+              <div class="image">
+                <img src="static/imgs/nnqa.PNG">
+              </div>
+              <div class="content">
+                <span class="header"> 
+
+                  <span class="handsontext">Hands-On:</span> Deep Learning based Simple QA
+
+                </span>
+                <div class="meta">
+                  <span>
+                    Requirements: 
+                    [OPTIONAL] linux distro;
+                    <a class="popup" data-tooltip="v2.7">python</a>;
+                    <a class="popup" data-tooltip="guide to setup numpy" href="https://scipy.org/install.html" >numpy</a>;
+                    <a class="popup" data-tooltip="get pytorch here" href="https://scipy.org/install.html" >pytorch</a>
+
+                  </span>
+                </div>
+                <div class="description">
+                  <p>
+                    We will give a practical introduction for the development and training of a simple question answering system using neural networks, focusing on the implementation of a learning-to-rank approach for QA in <a class="popup" href="http://pytorch.org/" data-tooltip="get pytorch here">PyTorch</a>. First, we will show how to write a basic neural model for ranking questions, how to prepare training data and how to train and evaluate the model. Then we will discuss possible improvements to the model, such as handling out-of-vocabulary words and better predicate representation.
+                  </p>
+                </div>
+                <div class="extra">
+
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="ui padded basic stackable segment" id="interlude">
+
+<!--
+        <div class="ui dimmer">
+          <div class="content">
+            <div class="center">
+              <span class="ui inverted header interlude-header-dimmer">
+                Coming right up, soon!
+              </span>
+            </div>
+          </div>
+        </div>
+-->
+
+        <div class="center aligned interlude-header" id="readinglist">
+          
+            <a class="interlude-header-main" href="https://github.com/AskNowQA/QA-Tutorial" data-tooltip="Github link">
+                <b>/* slides, programs and other data here */</b>
+            </a> 
+        </div>
+
+<!--
+        <div class="center aligned column" id="requirements">
+          <div class="interlude-header">
+            <span class="interlude-header-main">
+              /* requirements */
+            </span> <br>
+            <span class="interlude-header-sub">
+              at a glance
+            </span>
+          </div>
+
+        </div>
+-->
+
+      </div>
+
+
+      <div class="ui divider" id="above-interlude">
+
+      </div>
+
+
+      <div class="ui padded basic segment" id="people">
+
+        <div class="section-header">
+          Team
+        </div>
+
+        <div class="ui four doubling  cards" id="people-cards">
+
+          <div class="card">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <a href="http://sda.tech/people/prof-dr-jens-lehmann/">
+                      /* page */
+                    </a>
+
+                    <br>
+
+                    <a href="https://www.linkedin.com/in/jenslehmann82/">
+                      /* linkedin */
+                    </a>
+
+                    <br>
+
+                    <a href="https://twitter.com/JLehmann82">
+                      /* twitter */
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <img src="static/imgs/lehmann.jpg">
+            </div>
+            <div class="name content">
+              <span class="header">Prof. Dr. Jens Lehmann</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <a href="http://wdaqua.eu/supervisors/andreas-both/">
+                      /* page */
+                    </a>
+
+                    <br>
+
+                    <a href="https://www.linkedin.com/in/andreas-both-94267222">
+                      /* linkedin */
+                    </a>
+
+                    <br>
+
+                    <!--
+<a  href="https://twitter.com/JLehmann82">
+/* twitter */
+</a>
+-->
+                  </div>
+                </div>
+              </div>
+              <img src="static/imgs/both.jpgg.jpg">
+            </div>
+            <div class="name content">
+              <span class="header">Dr. Andreas Both</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <a href="http://sda.tech/people/dr-ioanna-lytra/">
+                      /* page */
+                    </a>
+
+                    <br>
+
+                    <a href="https://www.linkedin.com/in/ioanna-lytra-77369417/">
+                      /* linkedin */
+                    </a>
+
+                    <br>
+
+                    <a href="https://twitter.com/ilytra">
+                      /* twitter */
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <img src="static/imgs/Ioanna.jpg">
+            </div>
+            <div class="name content">
+              <span class="header">Dr. Ioanna Lytra</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <a href="http://sda.tech/people/mohnish-dubey/">
+                      /* page */
+                    </a>
+
+                    <br>
+
+                    <a href="https://www.linkedin.com/in/mohnish-dubey-bonn/">
+                      /* linkedin */
+                    </a>
+
+                    <br>
+
+                    <a href="https://twitter.com/MohnishDubey">
+                      /* twitter */
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <img src="static/imgs/dubey.jpg">
+            </div>
+            <div class="name content">
+              <span class="header">Mohnish Dubey</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <a href="http://sda.tech/people/denis-lukovnikov/">
+                      /* page */
+                    </a>
+
+                    <br>
+
+                    <a href="https://www.linkedin.com/in/lukovnikovdenis/">
+                      /* linkedin */
+                    </a>
+
+                    <br>
+
+                    <a href="https://twitter.com/lukovnikov">
+                      /* twitter */
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <img src="static/imgs/Denis.png">
+            </div>
+            <div class="name content">
+              <span class="header">Denis Lukovnikov</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <a href="http://sda.tech/people/kuldeep-singh/">
+                      /* page */
+                    </a>
+
+                    <br>
+
+                    <a href="https://www.linkedin.com/in/kuldeep-singh-67a4a840/">
+                      /* linkedin */
+                    </a>
+
+                    <br>
+
+                    <a href="https://twitter.com/OyeKuldeep">
+                      /* twitter */
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <img src="static/imgs/kuldeep.jpg">
+            </div>
+            <div class="name content">
+              <a class="header">Kuldeep Singh</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <a href="http://sda.tech/people/gaurav-maheshwari/">
+                      /* page */
+                    </a>
+
+                    <br>
+
+                    <a href="https://www.linkedin.com/in/maheshwarigaurav1/">
+                      /* linkedin */
+                    </a>
+
+                    <br>
+
+                    <a href="https://twitter.com/saist007">
+                      /* twitter */
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <img src="static/imgs/maheshwari.jpg">
+            </div>
+            <div class="name content">
+              <a class="header">Gaurav Maheshwari</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <a href="http://sda.tech/people/priyansh-trivedi/">
+                      /* page */
+                    </a>
+
+                    <br>
+
+                    <a href="https://www.linkedin.com/in/priyanshtrivedi/">
+                      /* linkedin */
+                    </a>
+
+                    <br>
+
+                    <a href="https://twitter.com/ekandekha_comma">
+                      /* twitter */
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <img src="static/imgs/trivedi.jpg">
+            </div>
+            <div class="name content">
+              <a class="header">Priyansh Trivedi</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ui padded footer vertical segment" id="footer">
+      <div class="ui stackable middle aligned divided grid container">
+
+        <div class="center aligned eight wide column" id="contact">
+          <div class="footer-header center aligned">
+
+            <div class="social notlast" id="twitter">
+              Tell us our website's ugly on <a href="http://twitter.com/AskNowQA" target="_blank">twitter</a>
+            </div>
+
+            or
+
+            <div class="social notlast notfirst" id="github">
+              Raise an issue on our 
+              <a href="https://github.com/AskNowQA/QA-Tutorial/issues">repo</a>
+            </div>
+            or
+            <div class="social notfirst" id="email">
+              Drop us a line at <a class="sameline" href="mailto:gaurav.maheshwari@uni-bonn.de?Subject=QA" target="_top">gaurav.maheshwari@uni-bonn.de</a>
+            </div>
+
+          </div>
+        </div>
+        <div class="center aligned eight wide column" id="organization">
+
+          <a href="http://sda.tech" class="ui centered medium image">
+            <img src="static/imgs/sdafull.png">
+          </a>
+
+          <div class="ui centered three column wide grid">
+
+            <div class="center aligned column">
+              <a href="http://wdaqua.eu/" class="ui centered small image">
+                <img src="static/imgs/wdaqua.png">
+              </a>
+            </div>
+            
+            <div class="center aligned column">
+              <a href="https://www.iais.fraunhofer.de/" class="ui centered small image">
+                <img src="static/imgs/iais.gif">
+              </a>
+            </div>
+            
+            <div class="left aligned column">
+              <a href="https://www.uni-bonn.de/" class="ui small image">
+                <img src="static/imgs/unibonn.png">
+              </a>
+            </div>
+            
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <script src="static/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+
+
+    <script type="text/javascript">
+//      $('#body #interlude')
+//        .dimmer({
+//        on: 'hover'
+//      });
+
+      $('#body #people #people-cards .card .image').dimmer({
+        on: 'hover'
+      });
+
+      // Enable Smooth Scrolling
+      var scroll = new SmoothScroll('#header #header-menu .menu a');
+    </script>
+
+
+  </body>
+
+
+
+</html>
