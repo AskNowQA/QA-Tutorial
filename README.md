@@ -1,4 +1,4 @@
-# Build a Question Answering System Online @ ESWC 2018
+# Build a Question Answering System @ ESWC 2018
 
 You'll find all the material related to our tutorial at [ESWC 2018](https://2018.eswc-conferences.org/) here.
 
