@@ -5,7 +5,6 @@ You'll find all the material related to our tutorial at [ESWC 2018](https://2018
 Full day Tutorial, on 3rd June, 2018.
 
 Organized by Asknow, [SDA](sda.tech), University of Bonn. 
-[Tutorial Website](http://qatutorial.sda.tech/)
 
 ## Sessions
 
@@ -23,12 +22,3 @@ Organized by Asknow, [SDA](sda.tech), University of Bonn.
 
 [This folder](session4/) (within this repo) contains all the required materials. 
 You may need to to install some python libraries as well. See Requirements section below.
-
-## Requirements
-linux distro with a python installation. 
-Use
-
-```sh session4/pkgs/install_dep.sh'''
-to install all the necessary packages.
-
-To install miniconda use https://conda.io/miniconda.html
