@@ -2,7 +2,7 @@
 
 You'll find all the material related to our tutorial at [ESWC 2019](https://2019.eswc-conferences.org/) here.
 
-Full day Tutorial, on 3rd June, 2018.
+Full day Tutorial, on 3rd June, 2019.
 
 Organized by Asknow, [SDA](sda.tech), University of Bonn. 
 
