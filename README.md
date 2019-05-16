@@ -1,4 +1,4 @@
-# Build a Question Answering System @ ESWC 2018
+# Build a Question Answering System @ ESWC 2019
 
 You'll find all the material related to our tutorial at [ESWC 2019](https://2019.eswc-conferences.org/) here.
 
