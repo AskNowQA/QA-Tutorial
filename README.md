@@ -13,5 +13,5 @@ Organized by Asknow, [SDA](sda.tech), University of Bonn.
 
 
 ### 2. _Hands On_: Deep Learning based QA
-[Slides](slides/Session%204%20_%20Hands%20on%20with%20Deep%20Learning%20for%20QA.pdf)
+[Slides](slides/Session%202%20-%20Hands%20On.pdf)
 
