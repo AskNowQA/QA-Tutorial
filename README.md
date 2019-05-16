@@ -12,7 +12,7 @@ Organized by Asknow, [SDA](sda.tech), University of Bonn.
 [Slides](slides/Session%201%20-%20Introduction.pdf)
 
 
-### 4. _Hands On_: Deep Learning based QA
+### 2. _Hands On_: Deep Learning based QA
 [Slides](slides/Session%204%20_%20Hands%20on%20with%20Deep%20Learning%20for%20QA.pdf)
 
 [This folder](session4/) (within this repo) contains all the required materials. 
