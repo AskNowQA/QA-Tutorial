@@ -5,7 +5,7 @@ import pickle
 import warnings
 import traceback
 import numpy as np
-import progressbar #progressbar2
+# import progressbar #progressbar2
 
 # This code will NOT work locally.
 # sys.path.append('/data/priyansh/conda/fastai')
@@ -170,9 +170,9 @@ def _parse_glove_():
         # Open raw file
         f = open(os.path.join(glove_location['dir'], glove_location['raw']))
 
-        if DEBUG:
-            max_value = progressbar.UnknownLength if GLOVE_LENGTH is None else GLOVE_LENGTH
-            bar = progressbar.ProgressBar(max_value=max_value)
+        # if DEBUG:
+        #     max_value = progressbar.UnknownLength if GLOVE_LENGTH is None else GLOVE_LENGTH
+        #     bar = progressbar.ProgressBar(max_value=max_value)
 
         for line in f:
             lines += 1
@@ -190,11 +190,11 @@ def _parse_glove_():
             except KeyError:
                 # Its a new word, put it in somewhere.
                 vocab[word] = len(vocab)
-                new_vectors.append(coefs)
+                new_vectors.append([float(x) for x in coefs])
                 changes += 1
 
-            if DEBUG:
-                bar.update(lines)
+            # if DEBUG:
+            #     bar.update(lines)
 
         f.close()
 
