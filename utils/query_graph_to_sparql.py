@@ -18,97 +18,88 @@ vocab = ei.vocab
 plus_id = vocab['+']
 minus_id = vocab['-']
 
+
 def better_warning(message, category, filename, lineno, file=None, line=None):
     return ' %s:%s: %s:%s\n' % (filename, lineno, category.__name__, message)
 warnings.formatwarning = better_warning
+
 
 """
     SPARQL Templates to be used to reconstruct SPARQLs from query graphs
 """
 sparql_1hop_template = {
-    "-": '%(ask)s %(count)s WHERE { { ?uri <http://dbpedia.org/property/%(r1)s> <%(te1)s> } UNION '
+    "-": '%(head)s %(count)s WHERE { { ?uri <http://dbpedia.org/property/%(r1)s> <%(te1)s> } UNION '
          + '{ ?uri <http://dbpedia.org/ontology/%(r1)s> <%(te1)s> } UNION '
          + '{ ?uri <http://purl.org/dc/terms/%(r1)s> <%(te1)s> }. %(rdf)s } ',
-    "+": '%(ask)s %(count)s WHERE { { <%(te1)s> <http://dbpedia.org/property/%(r1)s> ?uri } UNION '
+    "+": '%(head)s %(count)s WHERE { { <%(te1)s> <http://dbpedia.org/property/%(r1)s> ?uri } UNION '
          + '{ <%(te1)s> <http://dbpedia.org/ontology/%(r1)s> ?uri } UNION'
-         + '{ ?uri <http://purl.org/dc/terms/%(r1)s> <%(te1)s> } . %(rdf)s }',
-    "-c": '%(ask)s %(count)s WHERE { ?uri <%(r1)s> <%(te1)s> . %(rdf)s }',
-    "+c": '%(ask)s %(count)s WHERE { <%(te1)s> <%(r1)s> ?uri . %(rdf)s }',
-}
+         + '{ ?uri <http://purl.org/dc/terms/%(r1)s> <%(te1)s> } . %(rdf)s }'
+    }
+
 sparql_boolean_template = {
-    "+": '%(ask)s %(count)s WHERE { { <%(te1)s> <http://dbpedia.org/property/%(r1)s> <%(te2)s> } UNION '
+    "+": '%(head)s %(count)s WHERE { { <%(te1)s> <http://dbpedia.org/property/%(r1)s> <%(te2)s> } UNION '
          + '{ <%(te1)s> <http://dbpedia.org/ontology/%(r1)s> <%(te2)s> } UNION '
          + '{ ?uri <http://purl.org/dc/terms/%(r1)s> <%(te1)s> } . %(rdf)s }',
-    "+s": '%(ask)s %(count)s WHERE { { <%(te1)s> <http://dbpedia.org/property/%(r1)s> ?uri } UNION '
+    "+s": '%(head)s %(count)s WHERE { { <%(te1)s> <http://dbpedia.org/property/%(r1)s> ?uri } UNION '
          + '{ <%(te1)s> <http://dbpedia.org/ontology/%(r1)s> ?uri } UNION '
          + '{ ?uri <http://purl.org/dc/terms/%(r1)s> <%(te1)s> } . %(rdf)s }',
-    "-s": '%(ask)s %(count)s WHERE { { ?uri <http://dbpedia.org/property/%(r1)s> <%(te1)s> } UNION '
+    "-s": '%(head)s %(count)s WHERE { { ?uri <http://dbpedia.org/property/%(r1)s> <%(te1)s> } UNION '
          + '{ ?uri <http://dbpedia.org/ontology/%(r1)s> <%(te1)s> } UNION '
          + '{ ?uri <http://purl.org/dc/terms/%(r1)s> <%(te1)s> } . %(rdf)s }'
-    # "": '%(ask)s %(count)s WHERE { { <%(te1)s> <http://dbpedia.org/property/%(r1)s> <%(te2)s> } UNION '
-    #                              + '{ <%(te1)s> <http://dbpedia.org/ontology/%(r1)s> <%(te2)s> } . %(rdf)s }',
-}
+    }
+
 sparql_2hop_1ent_template = {
-    "++": '%(ask)s %(count)s WHERE { {<%(te1)s> <http://dbpedia.org/property/%(r1)s> ?x} UNION '
+    "++": '%(head)s %(count)s WHERE { {<%(te1)s> <http://dbpedia.org/property/%(r1)s> ?x} UNION '
           + '{<%(te1)s> <http://dbpedia.org/ontology/%(r1)s> ?x} UNION '
           + '{<%(te1)s> <http://purl.org/dc/terms/%(r1)s> ?x} . '
           + '{?x <http://dbpedia.org/property/%(r2)s> ?uri} UNION'
           + '{?x <http://dbpedia.org/ontology/%(r2)s> ?uri} UNION'
           + '{?x <http://purl.org/dc/terms/%(r2)s> ?uri} . %(rdf)s }',
-    "-+": '%(ask)s %(count)s WHERE { {?x <http://dbpedia.org/property/%(r1)s> <%(te1)s>} UNION '
+    "-+": '%(head)s %(count)s WHERE { {?x <http://dbpedia.org/property/%(r1)s> <%(te1)s>} UNION '
           + '{?x <http://dbpedia.org/ontology/%(r1)s> <%(te1)s>} UNION '
           + '{?x <http://purl.org/dc/terms/%(r1)s> <%(te1)s>} .'
           + '{?x <http://dbpedia.org/property/%(r2)s> ?uri} UNION '
           + '{?x <http://dbpedia.org/ontology/%(r2)s> ?uri} UNION '
           + '{?x <http://purl.org/dc/terms/%(r2)s> ?uri} . %(rdf)s }',
-    "--": '%(ask)s %(count)s WHERE { {?x <http://dbpedia.org/property/%(r1)s> <%(te1)s>} UNION '
+    "--": '%(head)s %(count)s WHERE { {?x <http://dbpedia.org/property/%(r1)s> <%(te1)s>} UNION '
           + '{?x <http://dbpedia.org/ontology/%(r1)s> <%(te1)s>} UNION '
           + '{?x <http://purl.org/dc/terms/%(r1)s> <%(te1)s>} .'
           + '{?uri <http://dbpedia.org/property/%(r2)s> ?x} UNION '
           + '{?uri <http://dbpedia.org/ontology/%(r2)s> ?x} UNION '
           + '{?uri <http://purl.org/dc/terms/%(r2)s> ?x} . %(rdf)s }',
-    "+-": '%(ask)s %(count)s WHERE { {<%(te1)s> <http://dbpedia.org/property/%(r1)s> ?x} UNION '
+    "+-": '%(head)s %(count)s WHERE { {<%(te1)s> <http://dbpedia.org/property/%(r1)s> ?x} UNION '
           + '{<%(te1)s> <http://dbpedia.org/ontology/%(r1)s> ?x} UNION '
           + '{<%(te1)s> <http://purl.org/dc/terms/%(r1)s> ?x} .'
           + '{?uri <http://dbpedia.org/property/%(r2)s> ?x} UNION '
           + '{?uri <http://dbpedia.org/ontology/%(r2)s> ?x} UNION '
-          + '{?uri <http://purl.org/dc/terms/%(r2)s> ?x} . %(rdf)s }',
-    "++c": '%(ask)s %(count)s WHERE { <%(te1)s> <%(r1)s> ?x . ?x <%(r2)s> ?uri . %(rdf)s }',
-    "-+c": '%(ask)s %(count)s WHERE { ?x <%(r1)s> <%(te1)s> . ?x <%(r2)s> ?uri . %(rdf)s }',
-    "--c": '%(ask)s %(count)s WHERE { ?x <%(r1)s> <%(te1)s> . ?uri <%(r2)s> ?x . %(rdf)s }',
-    "+-c": '%(ask)s %(count)s WHERE { <%(te1)s> <%(r1)s> ?x . ?uri <%(r2)s> ?x . %(rdf)s }'
-}
+          + '{?uri <http://purl.org/dc/terms/%(r2)s> ?x} . %(rdf)s }'
+    }
 
 sparql_2hop_2ent_template = {
-    "+-": '%(ask)s %(count)s WHERE { {<%(te1)s> <http://dbpedia.org/property/%(r1)s> ?uri} UNION '
+    "+-": '%(head)s %(count)s WHERE { {<%(te1)s> <http://dbpedia.org/property/%(r1)s> ?uri} UNION '
           + '{<%(te1)s> <http://dbpedia.org/ontology/%(r1)s> ?uri} UNION '
           + '{<%(te1)s> <http://purl.org/dc/terms/%(r1)s> ?uri} . '
           + '{<%(te2)s> <http://dbpedia.org/property/%(r2)s> ?uri} UNION '
           + '{<%(te2)s> <http://dbpedia.org/ontology/%(r2)s> ?uri} UNION'
           + '{<%(te2)s> <http://purl.org/dc/terms/%(r2)s> ?uri} . %(rdf)s }',
-    "--": '%(ask)s %(count)s WHERE { {?uri <http://dbpedia.org/property/%(r1)s> <%(te1)s>} UNION '
+    "--": '%(head)s %(count)s WHERE { {?uri <http://dbpedia.org/property/%(r1)s> <%(te1)s>} UNION '
           + '{?uri <http://dbpedia.org/ontology/%(r1)s> <%(te1)s>} UNION '
           + '{?uri <http://purl.org/dc/terms/s> <%(te1)s>} . '
           + '{?uri <http://dbpedia.org/property/%(r2)s> <%(te2)s>} UNION '
           + '{?uri <http://dbpedia.org/ontology/%(r2)s> <%(te2)s>} UNION '
           + '{?uri <http://purl.org/dc/terms/%(r2)s> <%(te2)s>} . %(rdf)s }',
-    "-+": '%(ask)s %(count)s WHERE { {?uri <http://dbpedia.org/property/%(r1)s> <%(te1)s>} UNION '
+    "-+": '%(head)s %(count)s WHERE { {?uri <http://dbpedia.org/property/%(r1)s> <%(te1)s>} UNION '
           + '{?uri <http://dbpedia.org/ontology/%(r1)s> <%(te1)s>} UNION'
           + '{?uri <http://purl.org/dc/terms/%(r1)s> <%(te1)s>} .'
           + '{?uri <http://dbpedia.org/property/%(r2)s> <%(te2)s>} UNION'
           + '{?uri <http://dbpedia.org/ontology/%(r2)s> <%(te2)s>} UNION'
           + '{?uri <http://purl.org/dc/terms/%(r2)s> <%(te2)s>} . %(rdf)s }',
-    "++": '%(ask)s %(count)s WHERE { {<%(te1)s> <http://dbpedia.org/property/%(r1)s> ?uri} UNION '
+    "++": '%(head)s %(count)s WHERE { {<%(te1)s> <http://dbpedia.org/property/%(r1)s> ?uri} UNION '
           + '{<%(te1)s> <http://dbpedia.org/ontology/%(r1)s> ?uri} UNION'
           + '{<%(te1)s> <http://purl.org/dc/terms/%(r1)s> ?uri} .'
           + '{?uri <http://dbpedia.org/property/%(r2)s> <%(te2)s>} UNION'
           + '{?uri <http://dbpedia.org/ontology/%(r2)s> <%(te2)s>} UNION'
-          + '{?uri <http://purl.org/dc/terms/%(r2)s> <%(te2)s>}  . %(rdf)s }',
-    "+-c": '%(ask)s %(count)s WHERE { <%(te1)s> <%(r1)s> ?uri . <%(te2)s> <%(r2)s> ?uri . %(rdf)s }',
-    "--c": '%(ask)s %(count)s WHERE { ?uri <%(r1)s> <%(te1)s> . ?uri <%(r2)s> <%(te2)s> . %(rdf)s }',
-    "-+c": '%(ask)s %(count)s WHERE { ?uri <%(r1)s> <%(te1)s> . ?uri <%(r2)s> <%(te2)s> . %(rdf)s }',
-    "++c": '%(ask)s %(count)s WHERE { <%(te1)s> <%(r1)s> ?uri . ?uri <%(r2)s> <%(te2)s> . %(rdf)s }',
-}
+          + '{?uri <http://purl.org/dc/terms/%(r2)s> <%(te2)s>}  . %(rdf)s }'}
 
 rdf_constraint_template = ' ?%(var)s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <%(uri)s> . '
 RDF_TYPE_LOOKUP_LOC = 'data/data/common/rdf_type_lookup.json'
@@ -256,6 +247,7 @@ def rel_id_to_rel(rel, _relations):
             return occurrences[1][0]
         else:
             return occurrences[0][0]
+
 
 plus_id, minus_id = None, None # These are vocab IDs
 def reconstruct_corechain(_chain ,relations, embeddings_interface):
@@ -449,17 +441,13 @@ def convert_runtime(_graph):
 
         Returns a composted SPARQL.
 
-        1. Convert everything to strings.
-
     :param _graph: (see above)
     :return: str: SPARQL.
     """
     sparql_value = {}
 
     # Find entities
-    entities = _graph['entities']
     best_path = _graph['best_path']
-
 
     if len(best_path) == 2:
         corechain_signs  = [best_path[0]]
@@ -469,7 +457,7 @@ def convert_runtime(_graph):
         corechain_uris = [best_path[1],best_path[3]]
 
     
-    sparql_value["ask"] = 'SELECT DISTINCT'
+    sparql_value["head"] = 'SELECT DISTINCT'
     sparql_value["count"] = '?uri'
     sparql_value["rdf"] = ''
     
@@ -485,37 +473,25 @@ def convert_runtime(_graph):
     """
     signs_key = ''.join(corechain_signs)
 
-    if _graph['intent'] == 'ask':
-        # Assuming that there is only single triple ASK queries.
-        sparql_value["te1"] = _graph['entities'][0]
-        try:
-            sparql_value["te2"] = _graph['entities'][1]
-            sparql_template = sparql_boolean_template['+']
-        except IndexError:
-            warnings.warn("Found a single entity boolean question")
-            sparql_template = sparql_boolean_template[signs_key[0] + 's']
+    if len(signs_key) == 1:
 
+        # Single hop
+        sparql_template = sparql_1hop_template[signs_key]
+        sparql_value["te1"] = _graph['entities'][0]
         sparql_value["r1"] = corechain_uris[0].split('/')[-1]
 
-    elif len(signs_key) == 1:
-        print("DEBUG:  ", signs_key)
-        # Single hop, non boolean.
-        sparql_template = sparql_1hop_template[signs_key + 'c' if _graph['intent'] == 'count' else signs_key]
-        sparql_value["te1"] = _graph['entities'][0]
-        sparql_value["r1"] = corechain_uris[0] if _graph['intent'] == 'count' else corechain_uris[0].split('/')[-1]
-
     else:
-        # Double hop, non boolean.
+        # Double hop.
 
-        sparql_value["r1"] = corechain_uris[0] if _graph['intent'] == 'count' else corechain_uris[0].split('/')[-1]
-        sparql_value["r2"] = corechain_uris[1] if _graph['intent'] == 'count' else corechain_uris[1].split('/')[-1]
+        sparql_value["r1"] = corechain_uris[0].split('/')[-1]
+        sparql_value["r2"] = corechain_uris[1].split('/')[-1]
 
         # Check if entities are one or two
         if len(_graph['entities']) == 1:
-            sparql_template = sparql_2hop_1ent_template[signs_key + 'c' if _graph['intent'] == 'count' else signs_key]
+            sparql_template = sparql_2hop_1ent_template[signs_key]
             sparql_value["te1"] = _graph['entities'][0]
         else:
-            sparql_template = sparql_2hop_2ent_template[signs_key + 'c' if _graph['intent'] == 'count' else signs_key]
+            sparql_template = sparql_2hop_2ent_template[signs_key]
             sparql_value["te1"] = _graph['entities'][0]
             sparql_value["te2"] = _graph['entities'][1]
 
