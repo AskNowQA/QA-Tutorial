@@ -445,10 +445,7 @@ def convert_runtime(_graph):
     """
         Expects a dict containing:
             best_path,
-            intent,
-            rdf_constraint,
-            rdf_constraint_type,
-            rdf_best_path
+            entites
 
         Returns a composted SPARQL.
 
@@ -471,31 +468,11 @@ def convert_runtime(_graph):
         corechain_signs = [best_path[0],best_path[2]]
         corechain_uris = [best_path[1],best_path[3]]
 
-
-
-    # Construct the stuff outside the where clause
-    sparql_value["ask"] = 'ASK' if _graph['intent'] == 'ask' else 'SELECT DISTINCT'
-    if _graph['intent'] == 'count':
-        sparql_value["count"] = 'COUNT(?uri)'
-    elif _graph['intent'] == 'ask':
-        sparql_value["count"] = ''
-    else:
-        sparql_value["count"] = '?uri'
-
-    # Check if we need an RDF constraint.
-    if _graph['rdf_constraint']:
-        try:
-            rdf_constraint_values = {}
-            rdf_constraint_values['var'] = _graph['rdf_constraint_type']
-            rdf_constraint_values['uri'] = _graph['rdf_best_path']
-
-            sparql_value["rdf"] = rdf_constraint_template % rdf_constraint_values
-        except IndexError:
-            sparql_value["rdf"] = ''
-
-    else:
-        sparql_value["rdf"] = ''
-
+    
+    sparql_value["ask"] = 'SELECT DISTINCT'
+    sparql_value["count"] = '?uri'
+    sparql_value["rdf"] = ''
+    
     # Find the particular template based on the signs
 
     """
