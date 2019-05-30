@@ -44,7 +44,7 @@ except ImportError:
 # DBPEDIA_ENDPOINTS = ['http://localhost:8890/sparql/']
 # DBPEDIA_ENDPOINTS = ['http://131.220.153.66:7890/sparql']
 # DBPEDIA_ENDPOINTS = ['http://localhost:8164/sparql/']
-DBPEDIA_ENDPOINTS = ['http://localhost:8164/sparql']
+DBPEDIA_ENDPOINTS = ['http://kddste.sda.tech/dbpedia201604']
 # DBPEDIA_ENDPOINTS = ['http://sda-srv01.iai.uni-bonn.de:8164/sparql']
 REDIS_HOSTNAME = 'localhost'
 #REDIS_HOSTNAME  = '127.0.0.1'
