@@ -33,13 +33,16 @@ We can now proceed to configure this environment to our needs.
 
 1. Clone the repo, and navigate to it on the terminal. 
 
-2. Make the setup shell script executable. `chmod +x setup.sh`
+2. Change the branch to this one by `git checkout 2019_tutorial`
 
-3. Install the requirements, and some needed resources (like Word Embeddings etc). Simply run the setup script - `./setup.sh`
+3. Make the setup shell script executable. `chmod +x setup.sh`
+
+4. Install the requirements, and some needed resources (like Word Embeddings etc). Simply run the setup script - `./setup.sh`
 	This will take _a while_.
 
-4. Install a version of pytorch depending on your system. Visit [https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/locally/) to find what works for you.
+5. Install a version of pytorch depending on your system. Visit [https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/locally/) to find what works for you.
+NOTE: We need pytorch 0.4 version, and finding it is going to take a moment. 
 
-5. Download a pre-processed dataset file from Google Drive, and place it in `resources` directory within the cloned repo. Visit [https://drive.google.com/open?id=1AvBIC2QXmJ9tVzU4blAh2uY6canug6j9](https://drive.google.com/open?id=1AvBIC2QXmJ9tVzU4blAh2uY6canug6j9).
+6. Download a pre-processed dataset file from Google Drive, and place it in `resources` directory within the cloned repo. Visit [https://drive.google.com/open?id=1AvBIC2QXmJ9tVzU4blAh2uY6canug6j9](https://drive.google.com/open?id=1AvBIC2QXmJ9tVzU4blAh2uY6canug6j9).
 
 And we're good to go.
