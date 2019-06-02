@@ -60,7 +60,6 @@ gyp==0.1
 h5py==2.9.0
 idna==2.6
 ipaddress==1.0.17
-jsonschema==2.6.0
 Keras==2.2.4
 Keras-Applications==1.0.6
 Keras-Preprocessing==1.0.5
